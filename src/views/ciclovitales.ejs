@@ -1,0 +1,122 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Ciclo Vital
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Ciclo Vital</h5>
+                            <h6 class="card-subtitle text-muted">Administración de los cliclos vitales.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageCiclovitales = can('ciclovitales', 'editar') || can('ciclovitales', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Nombre</th>
+                                        <th>Código</th>
+                                        <th>Mes Desde</th>
+                                        <th>Mes Hasta</th>
+                                        <th>Descripción</th>
+                                        <% if (canManageCiclovitales) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].mesDesde %></td>
+                                                <td><%= data[i].mesHasta %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <% if (canManageCiclovitales) { %>
+                                                <td  class="table-action">
+                                                    <% if (can('ciclovitales', 'editar')) { %>
+                                                    <a href="/ciclovitales/updateCiclovital/<%= data[i].idCicloVital %>"><i class="align-middle fas fa-fw fa-pen"></i></i></a>
+                                                    <% } %>
+                                                    <% if (can('ciclovitales', 'eliminar')) { %>
+                                                    <a href="/ciclovitales/deleteCiclovital/<%= data[i].idCicloVital %>"><i class="align-middle fas fa-fw fa-trash"></i></a>                                                    
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <% if (can('ciclovitales', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuación.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form  action="/ciclovitales/addCiclovital" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre"  placeholder="Nombre" >
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Código</label>
+                                    <input type="text" class="form-control" name="codigo"  placeholder="Código">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mes Desde</label>
+                                    <input type="text" class="form-control" name="mesDesde"  placeholder="Mes Desde">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mes Hasta</label>
+                                    <input type="text" class="form-control" name="mesHasta"  placeholder="Mes Hasta">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion"  placeholder="Descripción">
+                                </div>
+                                <!--<div class="mb-3">
+                                    <label class="form-label w-100">Cargar archivo</label>
+                                    <input type="file">
+                                    <small class="form-text d-block text-muted">Formato de archivo CSV únicamente.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Check me out</span>
+                                    </label>
+                                </div>-->
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

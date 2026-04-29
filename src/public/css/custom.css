@@ -1,0 +1,102 @@
+/* Custom green theme overrides for Agresto */
+:root {
+  --bs-blue: #198754;
+  --bs-primary: #198754;
+  --bs-primary-rgb: 25, 135, 84;
+  --bs-primary-text-emphasis: #0f5132;
+  --bs-primary-bg-subtle: #d1e7dd;
+  --bs-primary-border-subtle: #a3cfbb;
+  --bs-link-color: #198754;
+  --bs-link-color-rgb: 25, 135, 84;
+  --bs-link-hover-color: #146c43;
+  --bs-link-hover-color-rgb: 20, 108, 67;
+  --bs-focus-ring-color: rgba(25, 135, 84, 0.28);
+}
+
+/* Keep buttons, pills and active controls in green */
+.btn-primary,
+.btn-outline-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary:active,
+.btn-primary:hover,
+.page-item.active .page-link,
+.page-link.active {
+  --bs-btn-bg: #198754;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-bg: #157347;
+  --bs-btn-hover-border-color: #146c43;
+  --bs-btn-active-bg: #146c43;
+  --bs-btn-active-border-color: #13653f;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-pagination-active-bg: #198754;
+  --bs-pagination-active-border-color: #198754;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+.nav-link:focus-visible {
+  border-color: #6ac6a0;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+/* Sidebar and header accents */
+.sidebar-brand,
+.sidebar-brand:hover {
+  background: #0f5132;
+}
+
+.wrapper:before {
+  background: linear-gradient(120deg, #0f5132 0%, #157347 50%, #198754 100%);
+}
+
+.sidebar-item.active > .sidebar-link,
+.sidebar-item.active .sidebar-link:hover {
+  background: #d1e7dd;
+}
+
+.sidebar-link .fab,
+.sidebar-link .fal,
+.sidebar-link .far,
+.sidebar-link .fas,
+.sidebar-link svg,
+a.sidebar-link .fab,
+a.sidebar-link .fal,
+a.sidebar-link .far,
+a.sidebar-link .fas,
+a.sidebar-link svg {
+  color: #198754;
+}
+
+/* Data table and cards with subtle green details */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: #f3fbf7;
+}
+
+.card {
+  border-left: 3px solid #198754;
+}
+
+.header-title {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.breadcrumb-item a,
+.table-action a:hover {
+  color: #c9f2de;
+}
+
+.table-action a {
+  color: #198754;
+}
+
+/* Nice green selection state */
+::selection {
+  background: #b7ebd3;
+  color: #0f5132;
+}

@@ -1,0 +1,87 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Tareas
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/tareas/updateTarea/<%= data.idTarea %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Actividad</label>
+                                    <select name="idActividad" class="form-control" required>
+                                        <option value="">Seleccione una actividad</option>
+                                        <% if (dataActividad) { %>
+                                            <% for (var i = 0; i < dataActividad.length; i++) { %>
+                                                <option value="<%= dataActividad[i].idActividad %>" <%= Number(data.idActividad) === Number(dataActividad[i].idActividad) ? 'selected' : '' %>><%= dataActividad[i].codigo %> - <%= dataActividad[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Usuario</label>
+                                    <select name="idUser" class="form-control" required>
+                                        <option value="">Seleccione un usuario</option>
+                                        <% if (dataUsuario) { %>
+                                            <% for (var i = 0; i < dataUsuario.length; i++) { %>
+                                                <option value="<%= dataUsuario[i].idUsuario %>" <%= Number(data.idUser) === Number(dataUsuario[i].idUsuario) ? 'selected' : '' %>><%= dataUsuario[i].codigo %> - <%= dataUsuario[i].nombreUsuario %> - <%= dataUsuario[i].nombreCompleto %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Tarea</label>
+                                    <select name="idEstadoTarea" class="form-control" required>
+                                        <option value="">Seleccione un estado</option>
+                                        <% if (dataEstadoTarea) { %>
+                                            <% for (var i = 0; i < dataEstadoTarea.length; i++) { %>
+                                                <option value="<%= dataEstadoTarea[i].idEstadoTarea %>" <%= Number(data.idEstadoTarea) === Number(dataEstadoTarea[i].idEstadoTarea) ? 'selected' : '' %>><%= dataEstadoTarea[i].codigo %> - <%= dataEstadoTarea[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" value="<%= data.ymdFecha || '' %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Finalizacion</label>
+                                    <input type="date" class="form-control" name="fechaFinalizacion" value="<%= data.ymdFechaFinalizacion || '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<%= data.nombre %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" rows="3" maxlength="500" placeholder="Descripcion"><%= data.descripcion %></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

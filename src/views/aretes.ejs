@@ -1,0 +1,94 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>   
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Aretes
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Aretes</h5>
+                            <h6 class="card-subtitle text-muted">Administración de los aretes.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageAretes = can('aretes', 'editar') || can('aretes', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <% if (canManageAretes) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <% if (canManageAretes) { %>
+                                                <td class="table-action">
+                                                    <% if (can('aretes', 'editar')) { %>
+                                                    <a href="/aretes/updateArete/<%= data[i].idArete %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('aretes', 'eliminar')) { %>
+                                                    <a href="/aretes/deleteArete/<%= data[i].idArete %>"><i class="align-middle fas fa-fw fa-trash"></i></a>                                                    
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <% if (can('aretes', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuación.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/aretes/addArete" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" placeholder="Descripción">
+                                </div>										
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+
+<%- include('partials/_footer') %>

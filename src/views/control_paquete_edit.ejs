@@ -1,0 +1,81 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Control de Paquetes</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="/control_paquetes">Control de Paquetes</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/control_paquetes/updateControlPaquete/<%= data.idPaquete %>/<%= data.idProducto %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Paquete</label>
+                                    <select name="idPaquete" class="form-control" required>
+                                        <option value="">-- Seleccionar paquete --</option>
+                                        <% if (dataPaquetes) { %>
+                                            <% for (var i = 0; i < dataPaquetes.length; i++) { %>
+                                                <option value="<%= dataPaquetes[i].idPaquete %>" <%= Number(data.idPaquete) === Number(dataPaquetes[i].idPaquete) ? 'selected' : '' %>><%= dataPaquetes[i].codigo %> - <%= dataPaquetes[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Producto</label>
+                                    <select name="idProducto" class="form-control" required>
+                                        <option value="">Seleccione un producto</option>
+                                        <% if (dataProductos) { %>
+                                            <% for (var i = 0; i < dataProductos.length; i++) { %>
+                                                <option value="<%= dataProductos[i].idProducto %>" <%= Number(data.idProducto) === Number(dataProductos[i].idProducto) ? 'selected' : '' %>><%= dataProductos[i].codigo %> - <%= dataProductos[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Dosificacion</label>
+                                    <input type="text" class="form-control" name="dosificacion" value="<%= data.dosificacion || '' %>" placeholder="Dosificacion">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Indicaciones</label>
+                                    <textarea class="form-control" name="indicaciones" rows="2" maxlength="500" placeholder="Indicaciones"><%= data.indicaciones || '' %></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Funcion</label>
+                                    <textarea class="form-control" name="funcion" rows="2" maxlength="500" placeholder="Funcion"><%= data.funcion || '' %></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Caducidad</label>
+                                    <input type="date" class="form-control" name="fechaCaducidad" value="<%= data.ymdFechaCaducidad || '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Imagenes</label>
+                                    <input type="text" class="form-control" name="imagenes" value="<%= data.imagenes || '' %>" placeholder="URL o referencia de imagenes">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <a href="/control_paquetes" class="btn btn-secondary ms-2">Cancelar</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<%- include('partials/_footer') %>

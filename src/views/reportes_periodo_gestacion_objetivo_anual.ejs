@@ -1,0 +1,69 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Periodo de Gestación y Objetivo Anual</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item active">Reportes</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Reporte de gestación y objetivo anual</h5>
+                            <h6 class="card-subtitle text-muted">Basado en la vista _vw_rpt_03_periodo_gestacion_y_objetivo_anual.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped nowrap" style="width:100%" data-scroll-x="true">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>ID Parto</th>
+                                        <th>ID Animal Madre</th>
+                                        <th>Código Vaca</th>
+                                        <th>Nombre Vaca</th>
+                                        <th>Raza</th>
+                                        <th>Fecha Parto Actual</th>
+                                        <th>Fecha Parto Siguiente</th>
+                                        <th>Días Entre Partos</th>
+                                        <th>Último Celo Antes Parto</th>
+                                        <th>Duración Gestación</th>
+                                        <th>Estado Objetivo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].idParto %></td>
+                                                <td><%= data[i].idAnimalMadre %></td>
+                                                <td><%= data[i].codigoVaca %></td>
+                                                <td><%= data[i].nombreVaca %></td>
+                                                <td><%= data[i].razaVaca %></td>
+                                                <td><%= data[i].fechaPartoActual %></td>
+                                                <td><%= data[i].fechaPartoSiguiente %></td>
+                                                <td><%= data[i].diasEntrePartos %></td>
+                                                <td><%= data[i].fechaUltimoCeloAntesParto %></td>
+                                                <td><%= data[i].duracionGestacionDias %></td>
+                                                <td><%= data[i].estadoObjetivoUnaCriaPorAno %></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/_footer') %>

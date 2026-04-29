@@ -1,0 +1,144 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Tareas
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Tareas</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de tareas.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageTareas = can('tareas', 'editar') || can('tareas', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Fecha</th>
+                                        <th>Fecha Finalizacion</th>
+                                        <th>Nombre</th>
+                                        <th>Actividad</th>
+                                        <th>Usuario</th>
+                                        <th>Estado</th>
+                                        <th>Descripcion</th>
+                                        <% if (canManageTareas) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].fechaFormateada %></td>
+                                                <td><%= data[i].fechaFinalizacionFormateada %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].codigoActividad %> - <%= data[i].nombreActividad %></td>
+                                                <td><%= data[i].codigoUsuario %> - <%= data[i].nombreUsuario %></td>
+                                                <td><%= data[i].codigoEstadoTarea %> - <%= data[i].nombreEstadoTarea %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <% if (canManageTareas) { %>
+                                                <td class="table-action">
+                                                    <% if (can('tareas', 'editar')) { %>
+                                                    <a href="/tareas/updateTarea/<%= data[i].idTarea %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('tareas', 'eliminar')) { %>
+                                                    <a href="/tareas/deleteTarea/<%= data[i].idTarea %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('tareas', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/tareas/addTarea" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Actividad</label>
+                                    <select name="idActividad" class="form-control" required>
+                                        <option value="">Seleccione una actividad</option>
+                                        <% if (dataActividad) { %>
+                                            <% for (var i = 0; i < dataActividad.length; i++) { %>
+                                                <option value="<%= dataActividad[i].idActividad %>"><%= dataActividad[i].codigo %> - <%= dataActividad[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Usuario</label>
+                                    <select name="idUser" class="form-control" required>
+                                        <option value="">Seleccione un usuario</option>
+                                        <% if (dataUsuario) { %>
+                                            <% for (var i = 0; i < dataUsuario.length; i++) { %>
+                                                <option value="<%= dataUsuario[i].idUsuario %>"><%= dataUsuario[i].codigo %> - <%= dataUsuario[i].nombreUsuario %> - <%= dataUsuario[i].nombreCompleto %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Tarea</label>
+                                    <select name="idEstadoTarea" class="form-control" required>
+                                        <option value="">Seleccione un estado</option>
+                                        <% if (dataEstadoTarea) { %>
+                                            <% for (var i = 0; i < dataEstadoTarea.length; i++) { %>
+                                                <option value="<%= dataEstadoTarea[i].idEstadoTarea %>"><%= dataEstadoTarea[i].codigo %> - <%= dataEstadoTarea[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Finalizacion</label>
+                                    <input type="date" class="form-control" name="fechaFinalizacion">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" rows="3" maxlength="500" placeholder="Descripcion"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

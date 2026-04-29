@@ -1,0 +1,400 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+    #area-map {
+        height: 560px;
+        width: 100%;
+        border-radius: 0.2rem;
+    }
+
+    .point-list {
+        max-height: 260px;
+        overflow-y: auto;
+    }
+
+    .point-badge {
+        min-width: 36px;
+    }
+</style>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Google Maps
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Definir area</h5>
+                            <h6 class="card-subtitle text-muted">Haga clic para agregar puntos. Puede arrastrarlos para modificar el area.</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <button type="button" class="btn btn-primary" id="fit-area-btn">Ajustar al area</button>
+                                <a href="https://www.google.com/maps/search/?api=1&query=<%= initialLatitude %>,<%= initialLongitude %>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary" id="open-google-maps-btn">Mostrar en Google Maps</a>
+                                <button type="button" class="btn btn-outline-primary" id="remove-last-point-btn">Quitar ultimo punto</button>
+                                <button type="button" class="btn btn-outline-primary" id="apply-coordinates-btn">Aplicar coordenadas</button>
+                                <button type="button" class="btn btn-outline-danger" id="clear-area-btn">Limpiar area</button>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Area estimada</label>
+                                <input type="text" class="form-control" id="area-result" value="0 m2" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Coordenadas del area</label>
+                                <textarea class="form-control" id="polygon-coordinates" rows="8" placeholder="Ejemplo:\n12.136400, -86.251400\n12.136500, -86.251100\n12.136200, -86.250900"></textarea>
+                                <small class="form-text text-muted">Puede editar una coordenada por linea en formato latitud,longitud y luego presionar Aplicar coordenadas.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Mapa interactivo</h5>
+                            <h6 class="card-subtitle text-muted">Centro actual: <%= initialLatitude %>, <%= initialLongitude %></h6>
+                        </div>
+                        <div class="card-body">
+                            <div id="area-map"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Puntos del area</h5>
+                            <h6 class="card-subtitle text-muted">Arrastre los marcadores, centre un punto o elimine puntos individuales.</h6>
+                        </div>
+                        <div class="card-body point-list" id="point-list">
+                            <div class="text-muted">No hay puntos agregados.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<div id="map-config" data-latitude="<%= initialLatitude %>" data-longitude="<%= initialLongitude %>" data-zoom="<%= zoom %>" hidden></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.2.0/turf.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const configNode = document.getElementById('map-config');
+        const initialLat = parseFloat(configNode.dataset.latitude);
+        const initialLng = parseFloat(configNode.dataset.longitude);
+        const initialZoom = parseInt(configNode.dataset.zoom, 10);
+
+        const map = L.map('area-map').setView([initialLat, initialLng], initialZoom);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const pointList = document.getElementById('point-list');
+        const polygonCoordinates = document.getElementById('polygon-coordinates');
+        const areaResult = document.getElementById('area-result');
+        const removeLastPointBtn = document.getElementById('remove-last-point-btn');
+        const clearAreaBtn = document.getElementById('clear-area-btn');
+        const fitAreaBtn = document.getElementById('fit-area-btn');
+        const applyCoordinatesBtn = document.getElementById('apply-coordinates-btn');
+        const openGoogleMapsBtn = document.getElementById('open-google-maps-btn');
+
+        const points = [];
+        const markers = [];
+        let polygonLayer = null;
+        let polylineLayer = null;
+
+        function formatArea(areaInSquareMeters) {
+            if (!areaInSquareMeters || areaInSquareMeters <= 0) {
+                return '0 m2';
+            }
+
+            if (areaInSquareMeters >= 1000000) {
+                return (areaInSquareMeters / 1000000).toFixed(3) + ' km2';
+            }
+
+            if (areaInSquareMeters >= 10000) {
+                return (areaInSquareMeters / 10000).toFixed(3) + ' ha';
+            }
+
+            return areaInSquareMeters.toFixed(2) + ' m2';
+        }
+
+        function renderPointList() {
+            if (points.length === 0) {
+                pointList.innerHTML = '<div class="text-muted">No hay puntos agregados.</div>';
+                polygonCoordinates.value = '';
+                areaResult.value = '0 m2';
+                return;
+            }
+
+            pointList.innerHTML = points.map(function (point, index) {
+                return '<div class="d-flex justify-content-between align-items-start border-bottom py-2">'
+                    + '<div class="me-3">'
+                    + '<span class="badge bg-primary point-badge">' + (index + 1) + '</span>'
+                    + '</div>'
+                    + '<div class="flex-grow-1">'
+                    + '<div><strong>Lat:</strong> ' + point.lat.toFixed(6) + '</div>'
+                    + '<div><strong>Lng:</strong> ' + point.lng.toFixed(6) + '</div>'
+                    + '<div class="mt-2 d-flex gap-2 flex-wrap">'
+                    + '<button type="button" class="btn btn-sm btn-outline-primary focus-point-btn" data-index="' + index + '">Ver</button>'
+                    + '<button type="button" class="btn btn-sm btn-outline-danger remove-point-btn" data-index="' + index + '">Eliminar</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>';
+            }).join('');
+
+            polygonCoordinates.value = points.map(function (point, index) {
+                return 'Punto ' + (index + 1) + ': ' + point.lat.toFixed(6) + ', ' + point.lng.toFixed(6);
+            }).join('\n');
+        }
+
+        function updateMarkerMetadata() {
+            markers.forEach(function (marker, index) {
+                const point = points[index];
+                marker.__pointIndex = index;
+                marker.setLatLng(point);
+                marker.bindPopup(
+                    'Punto ' + (index + 1)
+                    + '<br>Lat: ' + point.lat.toFixed(6)
+                    + '<br>Lng: ' + point.lng.toFixed(6)
+                    + '<br><small>Puede arrastrar este punto.</small>'
+                );
+            });
+        }
+
+        function updateGoogleMapsLink() {
+            let latitude = initialLat;
+            let longitude = initialLng;
+
+            if (points.length === 1) {
+                latitude = points[0].lat;
+                longitude = points[0].lng;
+            } else if (points.length >= 2) {
+                const bounds = L.latLngBounds(points);
+                const center = bounds.getCenter();
+                latitude = center.lat;
+                longitude = center.lng;
+            }
+
+            openGoogleMapsBtn.href = 'https://www.google.com/maps/search/?api=1&query=' + latitude + ',' + longitude;
+        }
+
+        function redrawShapes() {
+            if (polylineLayer) {
+                map.removeLayer(polylineLayer);
+                polylineLayer = null;
+            }
+
+            if (polygonLayer) {
+                map.removeLayer(polygonLayer);
+                polygonLayer = null;
+            }
+
+            if (points.length >= 2) {
+                polylineLayer = L.polyline(points, {
+                    color: '#198754',
+                    weight: 3,
+                    opacity: 0.9
+                }).addTo(map);
+            }
+
+            if (points.length >= 3) {
+                polygonLayer = L.polygon(points, {
+                    color: '#157347',
+                    weight: 3,
+                    fillColor: '#198754',
+                    fillOpacity: 0.22
+                }).addTo(map);
+
+                const polygonFeature = turf.polygon([points.map(function (point) {
+                    return [point.lng, point.lat];
+                }).concat([[points[0].lng, points[0].lat]])]);
+
+                areaResult.value = formatArea(turf.area(polygonFeature));
+            } else {
+                areaResult.value = '0 m2';
+            }
+
+            updateMarkerMetadata();
+            updateGoogleMapsLink();
+            renderPointList();
+        }
+
+        function createMarker(latlng) {
+            const marker = L.marker(latlng, { draggable: true }).addTo(map);
+
+            marker.on('dragend', function (event) {
+                const index = event.target.__pointIndex;
+                const movedPoint = event.target.getLatLng();
+                points[index] = { lat: movedPoint.lat, lng: movedPoint.lng };
+                redrawShapes();
+            });
+
+            marker.on('dblclick', function (event) {
+                const index = event.target.__pointIndex;
+                removePoint(index);
+            });
+
+            marker.on('click', function (event) {
+                L.DomEvent.stopPropagation(event);
+            });
+
+            return marker;
+        }
+
+        function rebuildMarkers() {
+            while (markers.length) {
+                map.removeLayer(markers.pop());
+            }
+
+            points.forEach(function (point) {
+                const marker = createMarker(point);
+                markers.push(marker);
+            });
+        }
+
+        function addPoint(latlng) {
+            points.push({ lat: latlng.lat, lng: latlng.lng });
+            const marker = createMarker(latlng);
+            markers.push(marker);
+
+            redrawShapes();
+        }
+
+        function removePoint(index) {
+            if (index < 0 || index >= points.length) {
+                return;
+            }
+
+            points.splice(index, 1);
+            const marker = markers.splice(index, 1)[0];
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            redrawShapes();
+        }
+
+        function removeLastPoint() {
+            if (points.length === 0) {
+                return;
+            }
+
+            removePoint(points.length - 1);
+        }
+
+        function clearArea() {
+            points.length = 0;
+            while (markers.length) {
+                map.removeLayer(markers.pop());
+            }
+            redrawShapes();
+        }
+
+        function parseCoordinatesInput() {
+            const rawLines = polygonCoordinates.value
+                .split('\n')
+                .map(function (line) { return line.trim(); })
+                .filter(function (line) { return line.length > 0; });
+
+            if (rawLines.length === 0) {
+                clearArea();
+                return;
+            }
+
+            const parsedPoints = rawLines.map(function (line) {
+                const cleanLine = line.replace(/^Punto\s+\d+\s*:\s*/i, '');
+                const parts = cleanLine.split(',').map(function (part) { return part.trim(); });
+
+                if (parts.length !== 2) {
+                    throw new Error('Cada linea debe tener latitud y longitud separadas por coma.');
+                }
+
+                const lat = parseFloat(parts[0]);
+                const lng = parseFloat(parts[1]);
+
+                if (Number.isNaN(lat) || Number.isNaN(lng)) {
+                    throw new Error('Se encontraron coordenadas invalidas.');
+                }
+
+                return { lat: lat, lng: lng };
+            });
+
+
+            points.length = 0;
+            parsedPoints.forEach(function (point) {
+                points.push(point);
+            });
+
+            rebuildMarkers();
+            redrawShapes();
+
+            if (points.length > 0) {
+                const group = L.featureGroup(markers);
+                map.fitBounds(group.getBounds(), { padding: [20, 20] });
+            }
+        }
+
+        map.on('click', function (event) {
+            addPoint(event.latlng);
+        });
+
+        removeLastPointBtn.addEventListener('click', removeLastPoint);
+        clearAreaBtn.addEventListener('click', clearArea);
+        fitAreaBtn.addEventListener('click', function () {
+            if (polygonLayer) {
+                map.fitBounds(polygonLayer.getBounds(), { padding: [20, 20] });
+                return;
+            }
+
+            if (polylineLayer) {
+                map.fitBounds(polylineLayer.getBounds(), { padding: [20, 20] });
+            }
+        });
+
+        applyCoordinatesBtn.addEventListener('click', function () {
+            try {
+                parseCoordinatesInput();
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+
+        pointList.addEventListener('click', function (event) {
+            const focusButton = event.target.closest('.focus-point-btn');
+            if (focusButton) {
+                const index = parseInt(focusButton.dataset.index, 10);
+                const point = points[index];
+                if (point) {
+                    map.setView([point.lat, point.lng], Math.max(map.getZoom(), 18));
+                    markers[index].openPopup();
+                }
+                return;
+            }
+
+            const removeButton = event.target.closest('.remove-point-btn');
+            if (removeButton) {
+                const index = parseInt(removeButton.dataset.index, 10);
+                removePoint(index);
+            }
+        });
+
+        renderPointList();
+        updateGoogleMapsLink();
+    });
+</script>
+<%- include('partials/_footer') %>

@@ -1,0 +1,161 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<%
+    function formatNumeroCR(value) {
+        if (value === null || value === undefined || value === '') {
+            return '';
+        }
+
+        var numberValue = Number(value);
+        if (!isFinite(numberValue)) {
+            return value;
+        }
+
+        return numberValue.toLocaleString('es-CR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+%>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Compra y Venta Ganado
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Registros de Compra y Venta</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de compra y venta de ganado.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageComprasVentasGanado = can('compras_ventas_ganado', 'editar') || can('compras_ventas_ganado', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Proveedor</th>
+                                        <th>Cliente</th>
+                                        <th>Animal</th>
+                                        <th>Fecha Venta</th>
+                                        <th>Fecha Compra</th>
+                                        <th>Precio</th>
+                                        <th>Precio Transporte</th>
+                                        <% if (canManageComprasVentasGanado) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].nombreProveedor || '' %></td>
+                                                <td><%= data[i].nombreCliente || '' %></td>
+                                                <td><%= data[i].codigoAnimal || '' %> - <%= data[i].nombreAnimal || '' %></td>
+                                                <td><%= data[i].fechaVentaCR || '' %></td>
+                                                <td><%= data[i].fechaCompraCR || '' %></td>
+                                                <td><%= formatNumeroCR(data[i].precio) %></td>
+                                                <td><%= formatNumeroCR(data[i].precioTransporte) %></td>
+                                                <% if (canManageComprasVentasGanado) { %>
+                                                <td class="table-action">
+                                                    <% if (can('compras_ventas_ganado', 'editar')) { %>
+                                                    <a href="/compras_ventas_ganado/updateCompraVentaGanado/<%= data[i].idCompraVentaGanado %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('compras_ventas_ganado', 'eliminar')) { %>
+                                                    <a href="/compras_ventas_ganado/deleteCompraVentaGanado/<%= data[i].idCompraVentaGanado %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('compras_ventas_ganado', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/compras_ventas_ganado/addCompraVentaGanado" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Proveedor</label>
+                                    <select name="idProveedor" class="form-control">
+                                        <option value="">Seleccione un proveedor</option>
+                                        <% if (dataProveedor) { %>
+                                            <% for (var i = 0; i < dataProveedor.length; i++) { %>
+                                                <option value="<%= dataProveedor[i].idProveedor %>"><%= dataProveedor[i].codigo %> - <%= dataProveedor[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cliente</label>
+                                    <select name="idCliente" class="form-control">
+                                        <option value="">Seleccione un cliente</option>
+                                        <% if (dataCliente) { %>
+                                            <% for (var i = 0; i < dataCliente.length; i++) { %>
+                                                <option value="<%= dataCliente[i].idCliente %>"><%= dataCliente[i].codigo %> - <%= dataCliente[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal</label>
+                                    <select name="idAnimal" class="form-control" required>
+                                        <option value="">Seleccione un animal</option>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>"><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Venta</label>
+                                    <input type="date" class="form-control" name="fechaVenta">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Compra</label>
+                                    <input type="date" class="form-control" name="fechaCompra">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio</label>
+                                    <input type="number" step="0.01" class="form-control" name="precio" placeholder="Precio">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio Transporte</label>
+                                    <input type="number" step="0.01" class="form-control" name="precioTransporte" placeholder="Precio Transporte">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

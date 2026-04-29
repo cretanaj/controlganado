@@ -1,0 +1,19 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Acceso denegado</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p><%= message || 'No tiene permisos para acceder a este recurso.' %></p>
+                    <a class="btn btn-primary" href="/">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<%- include('partials/_footer') %>

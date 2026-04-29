@@ -1,0 +1,79 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Inventario
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/inventarios/updateInventario/<%= oldKeys.idProducto %>/<%= oldKeys.idFinca %>/<%= oldKeys.idUsuario %>/<%= oldKeys.fecha %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Producto</label>
+                                    <select name="idProducto" class="form-control" required>
+                                        <option value="">-- Seleccionar producto --</option>
+                                        <% if (dataProductos) { %>
+                                            <% for (var i = 0; i < dataProductos.length; i++) { %>
+                                                <option value="<%= dataProductos[i].idProducto %>" <%= Number(data.idProducto) === Number(dataProductos[i].idProducto) ? 'selected' : '' %>><%= dataProductos[i].codigo %> - <%= dataProductos[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca" class="form-control" required>
+                                        <option value="">-- Seleccionar finca --</option>
+                                        <% if (dataFincas) { %>
+                                            <% for (var i = 0; i < dataFincas.length; i++) { %>
+                                                <option value="<%= dataFincas[i].idFinca %>" <%= Number(data.idFinca) === Number(dataFincas[i].idFinca) ? 'selected' : '' %>><%= dataFincas[i].codigo %> - <%= dataFincas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Usuario</label>
+                                    <select name="idUsuario" class="form-control" required>
+                                        <option value="">-- Seleccionar usuario --</option>
+                                        <% if (dataUsuarios) { %>
+                                            <% for (var i = 0; i < dataUsuarios.length; i++) { %>
+                                                <option value="<%= dataUsuarios[i].idUsuario %>" <%= Number(data.idUsuario) === Number(dataUsuarios[i].idUsuario) ? 'selected' : '' %>><%= dataUsuarios[i].codigo %> - <%= dataUsuarios[i].nombreUsuario %> - <%= dataUsuarios[i].nombreCompleto %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cantidad</label>
+                                    <input type="number" step="0.01" class="form-control" name="cantidad" value="<%= data.cantidad || '' %>" placeholder="Cantidad">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" value="<%= data.fechaIso || '' %>" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

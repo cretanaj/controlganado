@@ -1,0 +1,168 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Control de Actividades</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Relaciones Actividad - Paquete</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de la tabla control_actividad.</h6>
+                        </div>
+                        <div class="card-body">
+                                <% const canManageControlActividades = can('control_actividades', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Actividad</th>
+                                        <th>Paquete</th>
+                                            <% if (canManageControlActividades) { %><th>Acciones</th><% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigoActividad %> - <%= data[i].nombreActividad %></td>
+                                                <td><%= data[i].codigoPaquete %> - <%= data[i].nombrePaquete %></td>
+                                                <% if (canManageControlActividades) { %>
+                                                <td class="table-action">
+                                                    <% if (can('control_actividades', 'eliminar')) { %><a href="/control_actividades/deleteControlActividad/<%= data[i].idActividad %>/<%= data[i].idPaquete %>"><i class="align-middle fas fa-fw fa-trash"></i></a><% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('control_actividades', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar una relacion</h5>
+                            <h6 class="card-subtitle text-muted">Seleccione actividad y paquete.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/control_actividades/addControlActividad" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Actividad</label>
+                                    <select id="idActividadSelect" name="idActividad" class="form-control" required>
+                                        <option value="">-- Seleccionar actividad --</option>
+                                        <% if (dataActividades) { %>
+                                            <% for (var i = 0; i < dataActividades.length; i++) { %>
+                                                <option value="<%= dataActividades[i].idActividad %>"><%= dataActividades[i].codigo %> - <%= dataActividades[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Paquete</label>
+                                    <select id="idPaqueteSelect" name="idPaquete" class="form-control" required>
+                                        <option value="">-- Seleccionar paquete --</option>
+                                        <% if (dataPaquetes) { %>
+                                            <% for (var i = 0; i < dataPaquetes.length; i++) { %>
+                                                <option value="<%= dataPaquetes[i].idPaquete %>"><%= dataPaquetes[i].codigo %> - <%= dataPaquetes[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<script id="controlActividadesData" type="application/json"><%- JSON.stringify(data || []) %></script>
+<script>
+    (function () {
+        const actividadSelect = document.getElementById('idActividadSelect');
+        const paqueteSelect = document.getElementById('idPaqueteSelect');
+        const dataNode = document.getElementById('controlActividadesData');
+        if (!actividadSelect || !paqueteSelect) {
+            return;
+        }
+
+        const $ = window.jQuery;
+        const $actividadSelect = $ ? $(actividadSelect) : null;
+        const $paqueteSelect = $ ? $(paqueteSelect) : null;
+
+        function setupSelect2($select, placeholder, dropdownParentSelector) {
+            if (!$select || !$select.select2) {
+                return;
+            }
+
+            if ($select.hasClass('select2-hidden-accessible')) {
+                $select.select2('destroy');
+            }
+
+            $select.select2({
+                width: '100%',
+                placeholder: placeholder,
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $select.closest(dropdownParentSelector)
+            });
+        }
+
+        const relacionesRaw = dataNode ? JSON.parse(dataNode.textContent || '[]') : [];
+        const relaciones = relacionesRaw.map(function (item) {
+            return {
+                idActividad: Number(item.idActividad),
+                idPaquete: Number(item.idPaquete)
+            };
+        });
+
+        function filtrarPaquetes() {
+            const idActividad = Number(actividadSelect.value);
+            for (let i = 0; i < paqueteSelect.options.length; i++) {
+                const option = paqueteSelect.options[i];
+                if (!option.value) {
+                    option.hidden = false;
+                    continue;
+                }
+
+                const idPaquete = Number(option.value);
+                const existeRelacion = relaciones.some((r) => r.idActividad === idActividad && r.idPaquete === idPaquete);
+                option.hidden = !!(idActividad && existeRelacion);
+            }
+
+            if (paqueteSelect.selectedOptions.length > 0 && paqueteSelect.selectedOptions[0].hidden) {
+                paqueteSelect.value = '';
+            }
+
+            if ($paqueteSelect) {
+                $paqueteSelect.trigger('change.select2');
+            }
+        }
+
+        actividadSelect.addEventListener('change', filtrarPaquetes);
+
+        setupSelect2($actividadSelect, 'Seleccione una actividad', '.card-body');
+        setupSelect2($paqueteSelect, 'Seleccione un paquete', '.card-body');
+        filtrarPaquetes();
+    })();
+</script>
+<%- include('partials/_footer') %>

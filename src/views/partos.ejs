@@ -1,0 +1,205 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Partos
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <% if (can('partos', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/partos/addParto" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Animal Madre</label>
+                                        <select id="animalMadreSelector" name="idAnimalMadre" class="form-control" required>
+                                            <option value="">Seleccione una madre</option>
+                                            <% if (dataAnimal) { %>
+                                                <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                    <option value="<%= dataAnimal[i].idAnimal %>"><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Animal Padre</label>
+                                        <select id="animalPadreSelector" name="idAnimalPadre" class="form-control" required>
+                                            <option value="">Seleccione un padre</option>
+                                            <% if (dataAnimal) { %>
+                                                <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                    <option value="<%= dataAnimal[i].idAnimal %>"><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Codigo Cria</label>
+                                        <input type="text" class="form-control" name="codigo" placeholder="Codigo" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Codigo Alterno Cria</label>
+                                        <input type="text" class="form-control" name="codigoAlterno" placeholder="Codigo alterno">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Raza Cria</label>
+                                        <select name="idRaza" class="form-control" required>
+                                            <option value="">Seleccione una raza</option>
+                                            <% if (dataRaza) { %>
+                                                <% for (var i = 0; i < dataRaza.length; i++) { %>
+                                                    <option value="<%= dataRaza[i].idraza %>"><%= dataRaza[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Color Cria</label>
+                                        <select name="idColor" class="form-control" required>
+                                            <option value="">Seleccione un color</option>
+                                            <% if (dataColor) { %>
+                                                <% for (var i = 0; i < dataColor.length; i++) { %>
+                                                    <option value="<%= dataColor[i].idcolor %>"><%= dataColor[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Sexo Cria</label>
+                                        <input type="text" class="form-control" name="sexo" placeholder="M o F" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Arete Cria</label>
+                                        <select name="idArete" class="form-control">
+                                            <option value="">Sin arete</option>
+                                            <% if (dataArete) { %>
+                                                <% for (var i = 0; i < dataArete.length; i++) { %>
+                                                    <option value="<%= dataArete[i].idArete %>"><%= dataArete[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Estado Parto</label>
+                                        <select name="idEstadoParto" class="form-control" required>
+                                            <option value="">Seleccione un estado</option>
+                                            <% if (dataEstadoParto) { %>
+                                                <% for (var i = 0; i < dataEstadoParto.length; i++) { %>
+                                                    <option value="<%= dataEstadoParto[i].idEstadoParto %>"><%= dataEstadoParto[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Fecha</label>
+                                        <input type="date" class="form-control" name="fecha" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Peso</label>
+                                        <input type="number" class="form-control" name="peso" step="0.01" min="0" placeholder="Ejemplo: 32.50" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Descripcion Cria</label>
+                                        <input type="text" class="form-control" name="descripcion" placeholder="Descripcion">
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Salvar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Partos</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de partos.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManagePartos = can('partos', 'editar') || can('partos', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Madre</th>
+                                        <th>Padre</th>
+                                        <th>Cria</th>
+                                        <th>Estado Parto</th>
+                                        <th>Fecha</th>
+                                        <th>Peso</th>
+                                        <% if (canManagePartos) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigoMadre %> - <%= data[i].nombreMadre %></td>
+                                                <td><%= data[i].codigoPadre %> - <%= data[i].nombrePadre %></td>
+                                                <td><%= data[i].codigoCria %> - <%= data[i].nombreCria %></td>
+                                                <td><%= data[i].nombreEstadoParto || '' %></td>
+                                                <td><%= data[i].fechaFormateada %></td>
+                                                <td><%= data[i].peso %></td>
+                                                <% if (canManagePartos) { %>
+                                                <td class="table-action">
+                                                    <% if (can('partos', 'editar')) { %>
+                                                    <a href="/partos/updateParto/<%= data[i].idParto %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('partos', 'eliminar')) { %>
+                                                    <a href="/partos/deleteParto/<%= data[i].idParto %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!window.jQuery || !window.jQuery.fn || !window.jQuery.fn.select2) {
+            return;
+        }
+
+        var $ = window.jQuery;
+        var $selectors = $('#animalMadreSelector, #animalPadreSelector');
+
+        $selectors.select2({
+            width: '100%',
+            placeholder: 'Seleccione un animal',
+            allowClear: true,
+            minimumResultsForSearch: 0,
+            dropdownParent: $selectors.first().closest('.card-body')
+        });
+    });
+</script>
+<%- include('partials/_footer') %>

@@ -1,0 +1,70 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Celo</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/celos/updateCelo/<%= data.idCelo %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Vaca</label>
+                                    <select name="idAnimalVaca" class="form-control" required>
+                                        <option value="">Seleccione una vaca</option>
+                                        <% if (dataVacas) { %>
+                                            <% for (var i = 0; i < dataVacas.length; i++) { %>
+                                                <option value="<%= dataVacas[i].idAnimal %>" <%= Number(data.idAnimalVaca) === Number(dataVacas[i].idAnimal) ? 'selected' : '' %>><%= dataVacas[i].codigo %> - <%= dataVacas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Toro</label>
+                                    <select name="idAnimalToro" class="form-control" required>
+                                        <option value="">Seleccione un toro</option>
+                                        <% if (dataToros) { %>
+                                            <% for (var i = 0; i < dataToros.length; i++) { %>
+                                                <option value="<%= dataToros[i].idAnimal %>" <%= Number(data.idAnimalToro) === Number(dataToros[i].idAnimal) ? 'selected' : '' %>><%= dataToros[i].codigo %> - <%= dataToros[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inicio</label>
+                                    <input type="date" class="form-control" name="fechaInicio" value="<%= data.ymdFechaInicio || '' %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Fin</label>
+                                    <input type="date" class="form-control" name="fechaFin" value="<%= data.ymdFechaFin || '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Observacion</label>
+                                    <textarea class="form-control" name="observacion" rows="3" maxlength="500" placeholder="Observacion"><%= data.observacion %></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

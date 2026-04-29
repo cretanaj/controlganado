@@ -1,0 +1,131 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Usuarios
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Usuarios</h5>
+                            <h6 class="card-subtitle text-muted">Administracion del catalogo de usuarios.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageUsuarios = can('usuarios', 'editar') || can('usuarios', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Codigo</th>
+                                        <th>Usuario</th>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Perfil</th>
+                                        <th>Estado</th>
+                                        <% if (canManageUsuarios) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].nombreUsuario %></td>
+                                                <td><%= data[i].nombreCompleto %></td>
+                                                <td><%= data[i].email %></td>
+                                                <td><%= data[i].nombrePerfil || '' %></td>
+                                                <td><%= Number(data[i].estado) === 0 ? 'Inactivo' : 'Activo' %></td>
+                                                <% if (canManageUsuarios) { %>
+                                                <td class="table-action">
+                                                    <% if (can('usuarios', 'editar')) { %>
+                                                    <a href="/usuarios/updateUsuario/<%= data[i].idUsuario %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('usuarios', 'eliminar')) { %>
+                                                    <a href="/usuarios/deleteUsuario/<%= data[i].idUsuario %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('usuarios', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/usuarios/addUsuario" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" placeholder="Codigo" maxlength="20" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" name="nombreUsuario" placeholder="Usuario" maxlength="100" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" name="nombreCompleto" placeholder="Nombre Completo" maxlength="150" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Clave</label>
+                                    <input type="password" class="form-control" name="clave" placeholder="Clave" maxlength="255" minlength="8" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Perfil</label>
+                                    <select name="idPerfil" class="form-control" required>
+                                        <option value="">-- Seleccionar perfil --</option>
+                                        <% if (dataPerfiles) { %>
+                                            <% for (var i = 0; i < dataPerfiles.length; i++) { %>
+                                                <option value="<%= dataPerfiles[i].idPerfil %>"><%= dataPerfiles[i].codigo %> - <%= dataPerfiles[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado</label>
+                                    <select name="estado" class="form-control">
+                                        <option value="1" selected>Activo</option>
+                                        <option value="0">Inactivo</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

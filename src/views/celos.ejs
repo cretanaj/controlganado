@@ -1,0 +1,123 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Celo</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <% if (can('celos', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/celos/addCelo" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Vaca</label>
+                                    <select name="idAnimalVaca" class="form-control" required>
+                                        <option value="">Seleccione una vaca</option>
+                                        <% if (dataVacas) { %>
+                                            <% for (var i = 0; i < dataVacas.length; i++) { %>
+                                                <option value="<%= dataVacas[i].idAnimal %>"><%= dataVacas[i].codigo %> - <%= dataVacas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Toro</label>
+                                    <select name="idAnimalToro" class="form-control" required>
+                                        <option value="">Seleccione un toro</option>
+                                        <% if (dataToros) { %>
+                                            <% for (var i = 0; i < dataToros.length; i++) { %>
+                                                <option value="<%= dataToros[i].idAnimal %>"><%= dataToros[i].codigo %> - <%= dataToros[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inicio</label>
+                                    <input type="date" class="form-control" name="fechaInicio" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Fin</label>
+                                    <input type="date" class="form-control" name="fechaFin">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Observacion</label>
+                                    <textarea class="form-control" name="observacion" rows="3" maxlength="500" placeholder="Observacion"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Registros de Celo</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de celo.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageCelos = can('celos', 'editar') || can('celos', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Animal Vaca</th>
+                                        <th>Animal Toro</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin</th>
+                                        <th>Observacion</th>
+                                        <% if (canManageCelos) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigoVaca %> - <%= data[i].nombreVaca %></td>
+                                                <td><%= data[i].codigoToro %> - <%= data[i].nombreToro %></td>
+                                                <td><%= data[i].fechaInicioFormateada %></td>
+                                                <td><%= data[i].fechaFinFormateada %></td>
+                                                <td><%= data[i].observacion %></td>
+                                                <% if (canManageCelos) { %>
+                                                <td class="table-action">
+                                                    <% if (can('celos', 'editar')) { %>
+                                                    <a href="/celos/updateCelo/<%= data[i].idCelo %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('celos', 'eliminar')) { %>
+                                                    <a href="/celos/deleteCelo/<%= data[i].idCelo %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

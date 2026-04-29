@@ -1,0 +1,71 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Animales Prontos para Celo</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item active">Reportes</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Reporte de animales prontos para celo</h5>
+                            <h6 class="card-subtitle text-muted">Basado en la vista _vw_rpt_02_animales_prontos_celo.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped nowrap" style="width:100%" data-scroll-x="true">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>ID Animal</th>
+                                        <th>Código Vaca</th>
+                                        <th>Nombre Vaca</th>
+                                        <th>Raza</th>
+                                        <th>Fecha Último Celo</th>
+                                        <th>Fecha Último Parto</th>
+                                        <th>Sexo Última Cría</th>
+                                        <th>Toros Relacionados</th>
+                                        <th>Próximo Celo Estimado</th>
+                                        <th>Días para Próximo Celo</th>
+                                        <th>Estado Rango</th>
+                                        <th>Gestación Ref. Días</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].idAnimal %></td>
+                                                <td><%= data[i].codigoVaca %></td>
+                                                <td><%= data[i].nombreVaca %></td>
+                                                <td><%= data[i].razaVaca %></td>
+                                                <td><%= data[i].fechaUltimoCelo %></td>
+                                                <td><%= data[i].fechaUltimoParto %></td>
+                                                <td><%= data[i].sexoUltimaCria %></td>
+                                                <td><%= data[i].torosRelacionados %></td>
+                                                <td><%= data[i].fechaProximoCeloEstimado %></td>
+                                                <td><%= data[i].diasParaProximoCelo %></td>
+                                                <td><%= data[i].estadoRangoFechas %></td>
+                                                <td><%= data[i].periodoGestacionReferencialDias %></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/_footer') %>

@@ -1,0 +1,124 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Colaboradores
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Colaboradores</h5>
+                            <h6 class="card-subtitle text-muted">Administracion del catalogo de colaboradores.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageColaboradores = can('colaboradores', 'editar') || can('colaboradores', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Nombre</th>
+                                        <th>Cedula</th>
+                                        <th>Apellidos</th>
+                                        <th>Telefono</th>
+                                        <th>Oficio</th>
+                                        <th>Finca</th>
+                                        <% if (canManageColaboradores) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].cedula %></td>
+                                                <td><%= data[i].apellidos %></td>
+                                                <td><%= data[i].telefono %></td>
+                                                <td><%= data[i].oficio %></td>
+                                                <td><%= data[i].nombreFinca || '' %></td>
+                                                <% if (canManageColaboradores) { %>
+                                                <td class="table-action">
+                                                    <% if (can('colaboradores', 'editar')) { %>
+                                                    <a href="/colaboradores/updateColaborador/<%= data[i].idColaborador %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('colaboradores', 'eliminar')) { %>
+                                                    <a href="/colaboradores/deleteColaborador/<%= data[i].idColaborador %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('colaboradores', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/colaboradores/addColaborador" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cedula</label>
+                                    <input type="text" class="form-control" name="cedula" placeholder="Cedula">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Telefono</label>
+                                    <input type="text" class="form-control" name="telefono" placeholder="Telefono">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Oficio</label>
+                                    <input type="text" class="form-control" name="oficio" placeholder="Oficio">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca" class="form-control" id="idFinca">
+                                        <option value="">-- Seleccionar finca --</option>
+                                        <% if (dataFincas) { %>
+                                            <% for (var i = 0; i < dataFincas.length; i++) { %>
+                                                <option value="<%= dataFincas[i].idFinca %>"><%= dataFincas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

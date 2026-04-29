@@ -1,0 +1,191 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Permisos por modulo</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Permisos</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <% if (message) { %>
+                <div class="alert alert-success" role="alert"><%= message %></div>
+            <% } %>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Matriz de permisos</h5>
+                            <h6 class="card-subtitle text-muted">Defina permisos por perfil y por modulo.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/permisos/save" method="post">
+                                <input type="hidden" name="changedModuloIds" id="changedModuloIds" value="">
+                                <input type="hidden" name="permissionPayload" id="permissionPayload" value="">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Perfil</label>
+                                        <select name="idPerfil" class="form-control" onchange="window.location='/permisos?idPerfil=' + this.value" required>
+                                            <% if (dataPerfiles) { %>
+                                                <% for (var i = 0; i < dataPerfiles.length; i++) { %>
+                                                    <option value="<%= dataPerfiles[i].idPerfil %>" <%= Number(selectedPerfilId) === Number(dataPerfiles[i].idPerfil) ? 'selected' : '' %>><%= dataPerfiles[i].codigo %> - <%= dataPerfiles[i].nombre %></option>
+                                                <% } %>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Buscar modulo</label>
+                                        <input id="permisoSearch" type="text" class="form-control" placeholder="Escriba nombre o ruta del modulo">
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table id="permisosTable" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Modulo</th>
+                                                <th>Ver</th>
+                                                <th>Crear</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% if (dataModulos) { %>
+                                                <% for (var i = 0; i < dataModulos.length; i++) { %>
+                                                    <% var modulo = dataModulos[i]; %>
+                                                    <% var permiso = dataPermisos[modulo.idModulo] || {}; %>
+                                                    <tr data-id-modulo="<%= modulo.idModulo %>" data-clave="<%= modulo.clave %>" data-ruta="<%= modulo.rutaBase %>">
+                                                        <td>
+                                                            <input type="hidden" name="moduloIds" value="<%= modulo.idModulo %>">
+                                                            <%= modulo.nombre %>
+                                                        </td>
+                                                        <td>
+                                                            <input type="hidden" class="permiso-hidden" name="permiso[<%= modulo.idModulo %>][ver]" value="0">
+                                                            <input type="checkbox" class="permiso-checkbox" name="permiso[<%= modulo.idModulo %>][ver]" value="1" <%= permiso.puedeVer ? 'checked' : '' %>>
+                                                        </td>
+                                                        <td>
+                                                            <input type="hidden" class="permiso-hidden" name="permiso[<%= modulo.idModulo %>][crear]" value="0">
+                                                            <input type="checkbox" class="permiso-checkbox" name="permiso[<%= modulo.idModulo %>][crear]" value="1" <%= permiso.puedeCrear ? 'checked' : '' %>>
+                                                        </td>
+                                                        <td>
+                                                            <input type="hidden" class="permiso-hidden" name="permiso[<%= modulo.idModulo %>][editar]" value="0">
+                                                            <input type="checkbox" class="permiso-checkbox" name="permiso[<%= modulo.idModulo %>][editar]" value="1" <%= permiso.puedeEditar ? 'checked' : '' %>>
+                                                        </td>
+                                                        <td>
+                                                            <input type="hidden" class="permiso-hidden" name="permiso[<%= modulo.idModulo %>][eliminar]" value="0">
+                                                            <input type="checkbox" class="permiso-checkbox" name="permiso[<%= modulo.idModulo %>][eliminar]" value="1" <%= permiso.puedeEliminar ? 'checked' : '' %>>
+                                                        </td>
+                                                    </tr>
+                                                <% } %>
+                                            <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Guardar permisos</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <script>
+            (function () {
+                var searchInput = document.getElementById('permisoSearch');
+                var table = document.getElementById('permisosTable');
+                if (!searchInput || !table) {
+                    return;
+                }
+
+                var rows = table.querySelectorAll('tbody tr');
+                var form = table.closest('form');
+                var changedModules = new Set();
+                var syncHiddenValues = function () {
+                    var checkboxes = table.querySelectorAll('.permiso-checkbox');
+                    checkboxes.forEach(function (checkbox) {
+                        var hidden = checkbox.parentElement.querySelector('.permiso-hidden');
+                        if (hidden) {
+                            hidden.value = checkbox.checked ? '1' : '0';
+                        }
+                    });
+                };
+
+                table.addEventListener('change', function (event) {
+                    if (event.target && event.target.classList.contains('permiso-checkbox')) {
+                        var hidden = event.target.parentElement.querySelector('.permiso-hidden');
+                        if (hidden) {
+                            hidden.value = event.target.checked ? '1' : '0';
+                        }
+
+                        var permissionName = event.target.getAttribute('name') || '';
+                        var match = permissionName.match(/^permiso\[(\d+)\]/);
+                        if (match && match[1]) {
+                            changedModules.add(match[1]);
+                        }
+                    }
+                });
+
+                if (form) {
+                    form.addEventListener('submit', function () {
+                        syncHiddenValues();
+                        var changedField = document.getElementById('changedModuloIds');
+                        if (changedField) {
+                            changedField.value = Array.from(changedModules).join(',');
+                        }
+
+                        var payloadField = document.getElementById('permissionPayload');
+                        if (payloadField) {
+                            var payload = {};
+                            var bodyRows = table.querySelectorAll('tbody tr');
+                            bodyRows.forEach(function (row) {
+                                var idInput = row.querySelector('input[name="moduloIds"]');
+                                if (!idInput || !idInput.value) {
+                                    return;
+                                }
+
+                                var idModulo = idInput.value;
+                                var ver = row.querySelector('input[name="permiso[' + idModulo + '][ver]"][type="checkbox"]');
+                                var crear = row.querySelector('input[name="permiso[' + idModulo + '][crear]"][type="checkbox"]');
+                                var editar = row.querySelector('input[name="permiso[' + idModulo + '][editar]"][type="checkbox"]');
+                                var eliminar = row.querySelector('input[name="permiso[' + idModulo + '][eliminar]"][type="checkbox"]');
+
+                                payload[idModulo] = {
+                                    ver: ver && ver.checked ? 1 : 0,
+                                    crear: crear && crear.checked ? 1 : 0,
+                                    editar: editar && editar.checked ? 1 : 0,
+                                    eliminar: eliminar && eliminar.checked ? 1 : 0
+                                };
+                            });
+
+                            payloadField.value = JSON.stringify(payload);
+                        }
+                    });
+                }
+
+                syncHiddenValues();
+
+                searchInput.addEventListener('input', function () {
+                    var term = (searchInput.value || '').toLowerCase().trim();
+                    rows.forEach(function (row) {
+                        var idModulo = (row.getAttribute('data-id-modulo') || '').toLowerCase();
+                        var clave = (row.getAttribute('data-clave') || '').toLowerCase();
+                        var modulo = (row.cells[0] && row.cells[0].textContent ? row.cells[0].textContent : '').toLowerCase();
+                        var ruta = (row.getAttribute('data-ruta') || '').toLowerCase();
+                        var matches = term === '' || idModulo.indexOf(term) !== -1 || clave.indexOf(term) !== -1 || modulo.indexOf(term) !== -1 || ruta.indexOf(term) !== -1;
+                        row.style.display = matches ? '' : 'none';
+                    });
+                });
+            })();
+        </script>
+
+<%- include('partials/_footer') %>

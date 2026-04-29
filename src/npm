@@ -1,0 +1,4407 @@
+Server on port 3000
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at handleDisconnect (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at module.exports (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:55:13)
+    at Object.<anonymous> (E:\node_projects\ganado\src\app.js:26:9)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+[0mGET / [32m200[0m 14.216 ms - 21187[0m
+[0mGET /js/settings.js [32m200[0m 3.582 ms - 849[0m
+[0mGET /img/avatars/avatar-5.jpg [32m200[0m 4.516 ms - 86292[0m
+[0mGET /img/avatars/avatar-3.jpg [32m200[0m 5.939 ms - 72751[0m
+[0mGET /css/modern.css [32m200[0m 6.456 ms - 607058[0m
+[0mGET /img/avatars/avatar-4.jpg [32m200[0m 1.072 ms - 78108[0m
+[0mGET /img/avatars/avatar-2.jpg [32m200[0m 1.848 ms - 94528[0m
+[0mGET /js/app.js [32m200[0m 1.384 ms - 2904266[0m
+[0mGET /fonts/fa-solid-900.woff2 [32m200[0m 1.881 ms - 158220[0m
+[0mGET /favicon.ico [33m404[0m 1.474 ms - 150[0m
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+[0mGET / [36m304[0m 3.749 ms - -[0m
+[0mGET /css/modern.css [36m304[0m 1.328 ms - -[0m
+[0mGET /js/settings.js [36m304[0m 1.418 ms - -[0m
+[0mGET /img/avatars/avatar-5.jpg [36m304[0m 1.429 ms - -[0m
+[0mGET /img/avatars/avatar-3.jpg [36m304[0m 1.424 ms - -[0m
+[0mGET /img/avatars/avatar-2.jpg [36m304[0m 0.906 ms - -[0m
+[0mGET /img/avatars/avatar-4.jpg [36m304[0m 0.844 ms - -[0m
+[0mGET /js/app.js [36m304[0m 0.455 ms - -[0m
+[0mGET /fonts/fa-solid-900.woff2 [36m304[0m 0.404 ms - -[0m
+[0mGET / [36m304[0m 2.417 ms - -[0m
+[0mGET /css/modern.css [36m304[0m 0.928 ms - -[0m
+[0mGET /js/settings.js [36m304[0m 0.888 ms - -[0m
+[0mGET /img/avatars/avatar-5.jpg [36m304[0m 0.816 ms - -[0m
+[0mGET /img/avatars/avatar-3.jpg [36m304[0m 0.786 ms - -[0m
+[0mGET /img/avatars/avatar-2.jpg [36m304[0m 0.502 ms - -[0m
+[0mGET /img/avatars/avatar-4.jpg [36m304[0m 0.454 ms - -[0m
+[0mGET /js/app.js [36m304[0m 0.588 ms - -[0m
+[0mGET /fonts/fa-solid-900.woff2 [36m304[0m 0.377 ms - -[0m
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+[0mGET /animales [32m200[0m 6.709 ms - 32172[0m
+[0mGET /css/modern.css [36m304[0m 0.959 ms - -[0m
+[0mGET /js/settings.js [36m304[0m 0.936 ms - -[0m
+[0mGET /img/avatars/avatar-5.jpg [36m304[0m 0.925 ms - -[0m
+[0mGET /img/avatars/avatar-3.jpg [36m304[0m 0.902 ms - -[0m
+[0mGET /img/avatars/avatar-2.jpg [36m304[0m 0.671 ms - -[0m
+[0mGET /img/avatars/avatar-4.jpg [36m304[0m 0.602 ms - -[0m
+[0mGET /js/app.js [36m304[0m 0.589 ms - -[0m
+[0mGET /fonts/fa-solid-900.woff2 [36m304[0m 0.426 ms - -[0m
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+[0mGET /razas [32m200[0m 4.879 ms - 24519[0m
+[0mGET /css/modern.css [36m304[0m 0.459 ms - -[0m
+[0mGET /img/avatars/avatar-3.jpg [36m304[0m 0.502 ms - -[0m
+[0mGET /js/settings.js [36m304[0m 0.521 ms - -[0m
+[0mGET /img/avatars/avatar-5.jpg [36m304[0m 0.516 ms - -[0m
+[0mGET /img/avatars/avatar-2.jpg [36m304[0m 0.994 ms - -[0m
+[0mGET /img/avatars/avatar-4.jpg [36m304[0m 0.953 ms - -[0m
+[0mGET /js/app.js [36m304[0m 0.628 ms - -[0m
+[0mGET /fonts/fa-solid-900.woff2 [36m304[0m 0.433 ms - -[0m
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+error when connecting to db: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1142:49)
+    at afterConnectMultiple (node:net:1723:7)
+    --------------------
+    at Protocol._enqueue (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (E:\node_projects\ganado\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (E:\node_projects\ganado\node_modules\mysql\lib\Connection.js:116:18)
+    at Timeout.handleDisconnect [as _onTimeout] (E:\node_projects\ganado\node_modules\express-myconnection\lib\express-myconnection.js:12:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1686:14)
+        at afterConnectMultiple (node:net:1716:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}

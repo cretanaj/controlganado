@@ -1,0 +1,104 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Asignacion de Fincas</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Relaciones Perfil - Finca</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de la tabla asignacion_finca.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageAsignacionFincas = can('asignacion_fincas', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Perfil</th>
+                                        <th>Finca</th>
+                                        <th>Fecha</th>
+                                        <% if (canManageAsignacionFincas) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigoPerfil %> - <%= data[i].nombrePerfil %></td>
+                                                <td><%= data[i].codigoFinca %> - <%= data[i].nombreFinca %></td>
+                                                <td><%= data[i].fechaFormateada %></td>
+                                                <% if (canManageAsignacionFincas) { %>
+                                                <td class="table-action">
+                                                    <% if (can('asignacion_fincas', 'eliminar')) { %>
+                                                    <a href="/asignacion_fincas/deleteAsignacionFinca/<%= data[i].idPerfil %>/<%= data[i].idFinca %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('asignacion_fincas', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar una asignacion</h5>
+                            <h6 class="card-subtitle text-muted">Seleccione perfil y finca.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/asignacion_fincas/addAsignacionFinca" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Perfil</label>
+                                    <select name="idPerfil" class="form-control" required>
+                                        <option value="">-- Seleccionar perfil --</option>
+                                        <% if (dataPerfiles) { %>
+                                            <% for (var i = 0; i < dataPerfiles.length; i++) { %>
+                                                <option value="<%= dataPerfiles[i].idPerfil %>"><%= dataPerfiles[i].codigo %> - <%= dataPerfiles[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca" class="form-control" required>
+                                        <option value="">-- Seleccionar finca --</option>
+                                        <% if (dataFincas) { %>
+                                            <% for (var i = 0; i < dataFincas.length; i++) { %>
+                                                <option value="<%= dataFincas[i].idFinca %>"><%= dataFincas[i].codigo %> - <%= dataFincas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

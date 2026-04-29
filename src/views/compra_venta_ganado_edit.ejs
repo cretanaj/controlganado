@@ -1,0 +1,87 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Compra y Venta Ganado
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/compras_ventas_ganado/updateCompraVentaGanado/<%= data.idCompraVentaGanado %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Proveedor</label>
+                                    <select name="idProveedor" class="form-control">
+                                        <option value="">Seleccione un proveedor</option>
+                                        <% if (dataProveedor) { %>
+                                            <% for (var i = 0; i < dataProveedor.length; i++) { %>
+                                                <option value="<%= dataProveedor[i].idProveedor %>" <%= Number(data.idProveedor) === Number(dataProveedor[i].idProveedor) ? 'selected' : '' %>><%= dataProveedor[i].codigo %> - <%= dataProveedor[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cliente</label>
+                                    <select name="idCliente" class="form-control">
+                                        <option value="">Seleccione un cliente</option>
+                                        <% if (dataCliente) { %>
+                                            <% for (var i = 0; i < dataCliente.length; i++) { %>
+                                                <option value="<%= dataCliente[i].idCliente %>" <%= Number(data.idCliente) === Number(dataCliente[i].idCliente) ? 'selected' : '' %>><%= dataCliente[i].codigo %> - <%= dataCliente[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal</label>
+                                    <select name="idAnimal" class="form-control" required>
+                                        <option value="">Seleccione un animal</option>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <%= Number(data.idAnimal) === Number(dataAnimal[i].idAnimal) ? 'selected' : '' %>><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Venta</label>
+                                    <input type="date" class="form-control" name="fechaVenta" value="<%= data.ymdFechaVenta || '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Compra</label>
+                                    <input type="date" class="form-control" name="fechaCompra" value="<%= data.ymdFechaCompra || '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio</label>
+                                    <input type="number" step="0.01" class="form-control" name="precio" value="<%= data.precio %>" placeholder="Precio">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio Transporte</label>
+                                    <input type="number" step="0.01" class="form-control" name="precioTransporte" value="<%= data.precioTransporte %>" placeholder="Precio Transporte">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

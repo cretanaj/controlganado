@@ -1,0 +1,66 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Histórico de Enfermedades
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item active">Reportes</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Reporte histórico por animal</h5>
+                            <h6 class="card-subtitle text-muted">Basado en la vista _vw_rpt_01_enfermedades_historicas_por_animal.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped nowrap" style="width:100%" data-scroll-x="true">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>ID Animal</th>
+                                        <th>Código Animal</th>
+                                        <th>Nombre Animal</th>
+                                        <th>ID Enfermedad</th>
+                                        <th>Código Enfermedad</th>
+                                        <th>Nombre Enfermedad</th>
+                                        <th>Veces Registrada</th>
+                                        <th>Paquetes Relacionados</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].idAnimal %></td>
+                                                <td><%= data[i].codigoAnimal %></td>
+                                                <td><%= data[i].nombreAnimal %></td>
+                                                <td><%= data[i].idEnfermedad %></td>
+                                                <td><%= data[i].codigoEnfermedad %></td>
+                                                <td><%= data[i].nombreEnfermedad %></td>
+                                                <td><%= data[i].vecesRegistrada %></td>
+                                                <td><%= data[i].paquetesRelacionados %></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/_footer') %>

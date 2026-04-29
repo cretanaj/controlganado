@@ -1,0 +1,136 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Configuración de Notificaciones
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Notificaciones</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de reglas de notificacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageNotificaciones = can('notificaciones', 'editar') || can('notificaciones', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo Notificacion</th>
+                                        <th>Condicion Dias</th>
+                                        <th>Fecha Inicio Dias</th>
+                                        <th>Fecha Final Dias</th>
+                                        <th>Criterio</th>
+                                        <th>Instrucciones</th>
+                                        <% if (canManageNotificaciones) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].codigoTipoNotificacion || '' %></td>
+                                                <td><%= data[i].condicionDias %></td>
+                                                <td><%= data[i].fechaInicioDias %></td>
+                                                <td><%= data[i].fechaFinalDias %></td>
+                                                <td><%= data[i].criterio %></td>
+                                                <td><%= data[i].instrucciones %></td>
+                                                <% if (canManageNotificaciones) { %>
+                                                <td class="table-action">
+                                                    <% if (can('notificaciones', 'editar')) { %>
+                                                    <a href="/notificaciones/updateNotificacion/<%= data[i].idNotificacion %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('notificaciones', 'eliminar')) { %>
+                                                    <a href="/notificaciones/deleteNotificacion/<%= data[i].idNotificacion %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <% if (can('notificaciones', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/notificaciones/addNotificacion" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" placeholder="Codigo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo Notificacion</label>
+                                    <select name="idTipoNotificacion" class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">-- Seleccionar tipo --</option>
+                                        <% if (dataTipoNotificacion) { %>
+                                            <% for (var i = 0; i < dataTipoNotificacion.length; i++) { %>
+                                                <option value="<%= dataTipoNotificacion[i].idTipoNotificacion %>"><%= dataTipoNotificacion[i].codigo %> - <%= dataTipoNotificacion[i].notificacionClass %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Condicion Dias</label>
+                                    <input type="number" class="form-control" name="condicionDias" placeholder="Condicion Dias">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inicio Dias</label>
+                                    <input type="number" class="form-control" name="fechaInicioDias" placeholder="Fecha Inicio Dias">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Final Dias</label>
+                                    <input type="number" class="form-control" name="fechaFinalDias" placeholder="Fecha Final Dias">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Criterio</label>
+                                    <input type="text" class="form-control" name="criterio" placeholder="Criterio">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Instrucciones</label>
+                                    <textarea class="form-control" name="instrucciones" rows="3" placeholder="Instrucciones"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

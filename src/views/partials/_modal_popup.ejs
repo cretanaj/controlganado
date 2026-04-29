@@ -1,0 +1,61 @@
+<!-- Modal popup reutilizable: incluir UNA vez por vista.
+     Uso: <a data-popup-url="https://..." data-popup-title="Texto opcional" href="#">...</a>
+-->
+<div class="modal fade" id="modalPopupLink" tabindex="-1" aria-labelledby="modalPopupLinkLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-truncate" id="modalPopupLinkLabel" style="max-width:90%"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-2" id="modalPopupLinkBody" style="min-height:300px;">
+            </div>
+            <div class="modal-footer">
+                <a id="modalPopupLinkExternal" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">Abrir en nueva pestaña</a>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    var IMG_EXT = /\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?.*)?$/i;
+    var _modal = null;
+
+    function getModal() {
+        var el = document.getElementById('modalPopupLink');
+        if (!_modal) {
+            _modal = new bootstrap.Modal(el);
+        }
+        return _modal;
+    }
+
+    document.addEventListener('click', function (e) {
+        var trigger = e.target.closest('[data-popup-url]');
+        if (!trigger) return;
+        e.preventDefault();
+
+        var url   = trigger.getAttribute('data-popup-url');
+        var title = trigger.getAttribute('data-popup-title') || url;
+
+        document.getElementById('modalPopupLinkLabel').textContent = title;
+        document.getElementById('modalPopupLinkExternal').href = url;
+
+        var body = document.getElementById('modalPopupLinkBody');
+        if (IMG_EXT.test(url)) {
+            body.innerHTML = '<img src="' + url + '" class="img-fluid d-block mx-auto" alt="' + title + '" style="max-height:70vh;">';
+        } else {
+            body.innerHTML = '<iframe src="' + url + '" style="width:100%;height:70vh;border:none;" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
+        }
+
+        getModal().show();
+    });
+
+    document.addEventListener('hidden.bs.modal', function (e) {
+        if (e.target && e.target.id === 'modalPopupLink') {
+            document.getElementById('modalPopupLinkBody').innerHTML = '';
+        }
+    });
+})();
+</script>

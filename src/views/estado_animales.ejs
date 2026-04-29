@@ -1,0 +1,93 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Estado Animal
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Estado Animal</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de los estados del animal.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageEstadoAnimales = can('estado_animales', 'editar') || can('estado_animales', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>
+                                        <% if (canManageEstadoAnimales) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <% if (canManageEstadoAnimales) { %>
+                                                <td class="table-action">
+                                                    <% if (can('estado_animales', 'editar')) { %>
+                                                    <a href="/estado_animales/updateEstadoAnimal/<%= data[i].idEstadoAnimal %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('estado_animales', 'eliminar')) { %>
+                                                    <a href="/estado_animales/deleteEstadoAnimal/<%= data[i].idEstadoAnimal %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <% if (can('estado_animales', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/estado_animales/addEstadoAnimal" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" placeholder="Codigo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

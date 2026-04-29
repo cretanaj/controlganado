@@ -1,0 +1,69 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Colaboradores
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/colaboradores/updateColaborador/<%= data.idColaborador %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<%= data.nombre %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cedula</label>
+                                    <input type="text" class="form-control" name="cedula" placeholder="Cedula" value="<%= data.cedula %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="<%= data.apellidos %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Telefono</label>
+                                    <input type="text" class="form-control" name="telefono" placeholder="Telefono" value="<%= data.telefono %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Oficio</label>
+                                    <input type="text" class="form-control" name="oficio" placeholder="Oficio" value="<%= data.oficio %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca" class="form-control" id="idFinca">
+                                        <option value="">-- Seleccionar finca --</option>
+                                        <% if (dataFincas) { %>
+                                            <% for (var i = 0; i < dataFincas.length; i++) { %>
+                                                <option value="<%= dataFincas[i].idFinca %>" <%= Number(data.idFinca) === Number(dataFincas[i].idFinca) ? 'selected' : '' %>><%= dataFincas[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

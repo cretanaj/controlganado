@@ -1,0 +1,139 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Palpaciones
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Palpaciones</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de palpaciones de vacas.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Animal</th>
+                                        <th>Hato</th>
+                                        <th>Fecha</th>
+                                        <th>Estado Palpacion</th>
+                                        <th>Resultado Preñez (meses)</th>
+                                        <th>Veterinario</th>
+                                        <th>Descripcion</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigoAnimal %> - <%= data[i].nombreAnimal %></td>
+                                                <td><%= data[i].nombreHato %></td>
+                                                <td><%= data[i].fechaFormateada %></td>
+                                                <td><%= data[i].nombreEstadoPalpacion %></td>
+                                                <td><%= data[i].resultadoPrenez %></td>
+                                                <td><%= data[i].nombreVeterinario %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <td class="table-action">
+                                                    <a href="/palpaciones/updatePalpacion/<%= data[i].idPalpacion %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <a href="/palpaciones/deletePalpacion/<%= data[i].idPalpacion %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/palpaciones/addPalpacion" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Animal (Vaca)</label>
+                                    <select name="idAnimalVaca" class="form-control" required>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>"><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hato</label>
+                                    <select name="idHato" class="form-control">
+                                        <option value="">Seleccione un hato</option>
+                                        <% if (dataHato) { %>
+                                            <% for (var i = 0; i < dataHato.length; i++) { %>
+                                                <option value="<%= dataHato[i].idHato %>"><%= dataHato[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Palpacion</label>
+                                    <select name="idEstadoPalpacion" class="form-control">
+                                        <option value="">Seleccione un estado</option>
+                                        <% if (dataEstadoPalpacion) { %>
+                                            <% for (var i = 0; i < dataEstadoPalpacion.length; i++) { %>
+                                                <option value="<%= dataEstadoPalpacion[i].idEstadoPalpacion %>"><%= dataEstadoPalpacion[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Resultado Preñez (meses)</label>
+                                    <input type="number" class="form-control" name="resultadoPrenez" min="0" step="0.1" placeholder="Ejemplo: 5.5">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Veterinario</label>
+                                    <select name="idVeterinario" class="form-control">
+                                        <option value="">Seleccione un veterinario</option>
+                                        <% if (dataVeterinario) { %>
+                                            <% for (var i = 0; i < dataVeterinario.length; i++) { %>
+                                                <option value="<%= dataVeterinario[i].idVeterinario %>"><%= dataVeterinario[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" rows="3" maxlength="500" placeholder="Descripcion"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

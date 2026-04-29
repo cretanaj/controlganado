@@ -1,0 +1,256 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Control de Paquetes</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Relaciones Paquete - Producto</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de la tabla control_paquete.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageControlPaquetes = can('control_paquetes', 'editar') || can('control_paquetes', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Paquete</th>
+                                        <th>Producto</th>
+                                        <th>Dosificacion</th>
+                                        <th>Indicaciones</th>
+                                        <th>Funcion</th>
+                                        <th>Fecha Caducidad</th>
+                                        <th>Imagenes</th>
+                                        <% if (canManageControlPaquetes) { %><th>Acciones</th><% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigoPaquete %> - <%= data[i].nombrePaquete %></td>
+                                                <td><%= data[i].codigoProducto %> - <%= data[i].nombreProducto %></td>
+                                                <td><%= data[i].dosificacion %></td>
+                                                <td><%= data[i].indicaciones %></td>
+                                                <td><%= data[i].funcion %></td>
+                                                <td><%= data[i].ymdFechaCaducidad || '' %></td>
+                                                <td><% if (data[i].imagenes && /^https?:\/\//i.test(data[i].imagenes)) { %><a href="#" data-popup-url="<%= data[i].imagenes %>" data-popup-title="Imagenes">Ver</a><% } else { %><%= data[i].imagenes || '' %><% } %></td>
+                                                <% if (canManageControlPaquetes) { %>
+                                                <td class="table-action">
+                                                    <% if (can('control_paquetes', 'editar')) { %><a href="/control_paquetes/updateControlPaquete/<%= data[i].idPaquete %>/<%= data[i].idProducto %>"><i class="align-middle fas fa-fw fa-pencil-alt"></i></a><% } %>
+                                                    <% if (can('control_paquetes', 'eliminar')) { %><a href="/control_paquetes/deleteControlPaquete/<%= data[i].idPaquete %>/<%= data[i].idProducto %>"><i class="align-middle fas fa-fw fa-trash"></i></a><% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('control_paquetes', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar una relacion</h5>
+                            <h6 class="card-subtitle text-muted">Seleccione paquete y producto.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/control_paquetes/addControlPaquete" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Paquete</label>
+                                    <select id="idPaqueteControlSelect" name="idPaquete" class="form-control" required>
+                                        <option value="">-- Seleccionar paquete --</option>
+                                        <% if (dataPaquetes) { %>
+                                            <% for (var i = 0; i < dataPaquetes.length; i++) { %>
+                                                <option value="<%= dataPaquetes[i].idPaquete %>"><%= dataPaquetes[i].codigo %> - <%= dataPaquetes[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Producto</label>
+                                    <select id="idProductoSelect" name="idProducto" class="form-control" required>
+                                        <option value="">Seleccione un producto</option>
+                                        <% if (dataProductos) { %>
+                                            <% for (var i = 0; i < dataProductos.length; i++) { %>
+                                                <option value="<%= dataProductos[i].idProducto %>"><%= dataProductos[i].codigo %> - <%= dataProductos[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Dosificacion</label>
+                                    <input type="text" class="form-control" name="dosificacion" placeholder="Dosificacion">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Indicaciones</label>
+                                    <textarea class="form-control" name="indicaciones" rows="2" maxlength="500" placeholder="Indicaciones"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Funcion</label>
+                                    <textarea class="form-control" name="funcion" rows="2" maxlength="500" placeholder="Funcion"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Caducidad</label>
+                                    <input type="date" class="form-control" name="fechaCaducidad">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Imagenes</label>
+                                    <input type="text" class="form-control" name="imagenes" placeholder="URL o referencia de imagenes">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+
+<script id="controlPaquetesData" type="application/json"><%- JSON.stringify(data || []) %></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var paqueteSelect = document.getElementById('idPaqueteControlSelect');
+        var productoSelect = document.getElementById('idProductoSelect');
+        var dataNode = document.getElementById('controlPaquetesData');
+
+        if (!paqueteSelect || !productoSelect) {
+            return;
+        }
+
+        var $paqueteSelect = window.jQuery ? window.jQuery(paqueteSelect) : null;
+        var $productoSelect = window.jQuery ? window.jQuery(productoSelect) : null;
+
+        if ($paqueteSelect && $paqueteSelect.select2) {
+            $paqueteSelect.select2({
+                width: '100%',
+                placeholder: 'Seleccione un paquete',
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $paqueteSelect.closest('.card-body')
+            });
+        }
+
+        if ($productoSelect && $productoSelect.select2) {
+            $productoSelect.select2({
+                width: '100%',
+                placeholder: 'Seleccione un producto',
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $productoSelect.closest('.card-body')
+            });
+        }
+
+        var relacionesRaw = dataNode ? JSON.parse(dataNode.textContent || '[]') : [];
+        var relaciones = relacionesRaw.map(function (item) {
+            return {
+                idPaquete: Number(item.idPaquete),
+                idProducto: Number(item.idProducto)
+            };
+        });
+
+        var allProductOptions = Array.prototype.slice.call(
+            productoSelect.querySelectorAll('option')
+        ).filter(function (option) {
+            return !!option.value;
+        }).map(function (option) {
+            return {
+                value: String(option.value || ''),
+                text: String(option.textContent || '')
+            };
+        });
+
+        function syncProductoSelectPlugin() {
+            if (!$productoSelect || !$productoSelect.select2) {
+                return;
+            }
+
+            if ($productoSelect.hasClass('select2-hidden-accessible')) {
+                $productoSelect.select2('destroy');
+            }
+
+            $productoSelect.select2({
+                width: '100%',
+                placeholder: 'Seleccione un producto',
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $productoSelect.closest('.card-body')
+            });
+        }
+
+        function renderProductosForPaquete(selectedPaqueteId, keepSelection) {
+            var paqueteId = Number(selectedPaqueteId || 0);
+            var previousProductoId = productoSelect.value;
+            var filteredProducts = allProductOptions.filter(function (product) {
+                if (!paqueteId) {
+                    return true;
+                }
+
+                return !relaciones.some(function (relacion) {
+                    return relacion.idPaquete === paqueteId && relacion.idProducto === Number(product.value);
+                });
+            });
+
+            if (!keepSelection) {
+                productoSelect.value = '';
+            }
+
+            productoSelect.disabled = false;
+            productoSelect.innerHTML = '';
+
+            var placeholderOption = document.createElement('option');
+            placeholderOption.value = '';
+            placeholderOption.textContent = 'Seleccione un producto';
+            productoSelect.appendChild(placeholderOption);
+
+            filteredProducts.forEach(function (product) {
+                var option = document.createElement('option');
+                option.value = product.value;
+                option.textContent = product.text;
+                productoSelect.appendChild(option);
+            });
+
+            if (keepSelection && previousProductoId && filteredProducts.some(function (product) { return product.value === previousProductoId; })) {
+                productoSelect.value = previousProductoId;
+            }
+
+            if (filteredProducts.length === 0) {
+                placeholderOption.textContent = paqueteId
+                    ? 'No hay productos disponibles para el paquete seleccionado'
+                    : 'Seleccione un producto';
+                productoSelect.disabled = true;
+            }
+
+            syncProductoSelectPlugin();
+        }
+
+        paqueteSelect.addEventListener('change', function () {
+            renderProductosForPaquete(this.value);
+        });
+
+        renderProductosForPaquete(paqueteSelect.value, true);
+    });
+</script>
+
+<%- include('partials/_footer') %>
+<%- include('partials/_modal_popup') %>

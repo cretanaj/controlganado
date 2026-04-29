@@ -1,0 +1,141 @@
+
+To start app
+node app.js > npm run dev
+
+Connect to Mysql
+mysql -u -root -p
+
+
+
+
+
+
+file: pakcage.json
+
+
+  "scripts": {
+    
+    {/*"start": "node src/index.js",*/}
+  },
+  
+   "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  
+  
+  
+  ejecutar el powershell como administrador y ejecutar el comando Set-ExecutionPolicy Unrestricted
+
+
+To run your project, navigate to the directory and run one of the following npm commands.
+- cd ExpoApp
+- npm run android
+- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- npm run web
+
+To use the local CLI instead (recommended in SDK 46 and higher), run:   │
+│   › npx expo <command> 
+
+
+12189979
+
+
+Ruta projecto
+D:\node_projects\ganado>
+npm run dev
+
+
+app.js >
+
+
+sql %N*$m4GQRqQ?#8g
+
+qc=cXL6wC"J7uy"
+
+warrenbrz123
+WarrenbrZ123*   ---
+warren
+
+042785
+
+CamiN1234*
+
+WarrenbrZ123*  --  amazon general
+%N*$m4GQRqQ?#8gqwqw12   --- consola, CamiN1234*
+
+454615503874 --- AWS Account ID
+
+
+
+
+
+
+import csv
+node src/uploadcsv/index.js
+
+D:\node_projects\ganado\src\uploadcsv>node index.js
+
+cd D:\node_projects\ganado\src\uploadcsv
+node index.js
+
+
+cd D:\node_projects\ganado
+npm run dev
+
+
+
+
+
+
+
+
+
+
+
+
+Learning:
+
+Qué son?
+| Tipo de ruta | Descripción | Ejemplo en HTML/CSS | 
+| Ruta absoluta | Empieza desde la raíz del servidor o sistema. Siempre funciona igual sin importar la URL actual. | /css/style.css | 
+| Ruta relativa | Depende de la ubicación actual del archivo o URL. Puede fallar si cambia el contexto. | css/style.css o ../css/style.css | 
+
+
+
+
+
+
+
+
+    <script>
+//  document.getElementById('hatoOrigenSelector').addEventListener('change', async function () {
+//    const itemId = this.value;
+//    //const response = await fetch(`/mostrarAnimal/${itemId}`);
+//
+//    //const data = await response.json();
+//
+//    //const tbody = document.querySelector('#datatables-reponsive tbody');
+//    //tbody.innerHTML = ''; // Limpiar tabla
+//
+//    console.log('item id: ' + itemId);
+//    //data.forEach(row => {
+//    //  const tr = document.createElement('tr');
+//    //  tr.innerHTML = `<td>${row.nombre}</td><td>${row.valor}</td>`;
+//    //  tbody.appendChild(tr);
+//    //});
+//  });
+</script>
+
+
+
+
+
+
+
+
+
+  var table = $('#datatables-reponsive').DataTable();
+
+  // Acceder a la columna 11
+  var columna = table.column(11).header();
+  console.log(columna);

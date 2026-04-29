@@ -1,0 +1,194 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Vacunacion
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/vacunaciones/updateVacunacion/<%= data.idVacunacion %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Hato</label>
+                                    <select id="hatoSelector" name="idHato" class="form-control" required>
+                                        <option value="">Seleccione un hato</option>
+                                        <% if (dataHato) { %>
+                                            <% for (var i = 0; i < dataHato.length; i++) { %>
+                                                <option value="<%= dataHato[i].idHato %>" <%= Number(data.idHato) === Number(dataHato[i].idHato) ? 'selected' : '' %>><%= dataHato[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal</label>
+                                    <select id="animalSelector" name="idAnimal" class="form-control" required>
+                                        <option value="">Seleccione un animal</option>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option data-hato-id="<%= dataAnimal[i].idHato %>" value="<%= dataAnimal[i].idAnimal %>" <%= Number(data.idAnimal) === Number(dataAnimal[i].idAnimal) ? 'selected' : '' %>><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Paquete</label>
+                                    <select name="idPaquete" class="form-control" required>
+                                        <option value="">Seleccione un paquete</option>
+                                        <% if (dataPaquete) { %>
+                                            <% for (var i = 0; i < dataPaquete.length; i++) { %>
+                                                <option value="<%= dataPaquete[i].idPaquete %>" <%= Number(data.idPaquete) === Number(dataPaquete[i].idPaquete) ? 'selected' : '' %>><%= dataPaquete[i].codigo %> - <%= dataPaquete[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" value="<%= data.ymdFecha || '' %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" rows="3" maxlength="500" placeholder="Descripcion"><%= data.descripcion %></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var hatoSelector = document.getElementById('hatoSelector');
+        var animalSelector = document.getElementById('animalSelector');
+        var $animalSelector = window.jQuery ? window.jQuery(animalSelector) : null;
+
+        if (!hatoSelector || !animalSelector) {
+            return;
+        }
+
+        if ($animalSelector && $animalSelector.select2) {
+            $animalSelector.select2({
+                width: '100%',
+                placeholder: 'Seleccione un animal',
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $animalSelector.closest('.card-body')
+            });
+        }
+
+        var allAnimalOptions = Array.prototype.slice.call(
+            animalSelector.querySelectorAll('option[data-hato-id]')
+        ).map(function (option) {
+            return {
+                value: String(option.value || ''),
+                text: String(option.textContent || ''),
+                hatoId: String(option.getAttribute('data-hato-id') || '')
+            };
+        });
+
+        function syncAnimalSelectPlugin() {
+            if (!$animalSelector || !$animalSelector.select2) {
+                return;
+            }
+            if ($animalSelector.hasClass('select2-hidden-accessible')) {
+                $animalSelector.select2('destroy');
+            }
+            $animalSelector.select2({
+                width: '100%',
+                placeholder: 'Seleccione un animal',
+                allowClear: true,
+                minimumResultsForSearch: 0,
+                dropdownParent: $animalSelector.closest('.card-body')
+            });
+        }
+
+        function renderAnimalsForHato(selectedHatoId, keepSelection) {
+            var hatoId = String(selectedHatoId || '');
+            var previousAnimalId = animalSelector.value;
+            var filteredAnimals = allAnimalOptions.filter(function (animal) {
+                return !hatoId || animal.hatoId === hatoId;
+            });
+
+            if (!keepSelection) {
+                animalSelector.value = '';
+            }
+
+            animalSelector.disabled = false;
+            animalSelector.innerHTML = '';
+
+            var placeholderOption = document.createElement('option');
+            placeholderOption.value = '';
+            placeholderOption.textContent = 'Seleccione un animal';
+            animalSelector.appendChild(placeholderOption);
+
+            filteredAnimals.forEach(function (animal) {
+                var option = document.createElement('option');
+                option.value = animal.value;
+                option.textContent = animal.text;
+                option.setAttribute('data-hato-id', animal.hatoId);
+                animalSelector.appendChild(option);
+            });
+
+            if (keepSelection && previousAnimalId && filteredAnimals.some(function (animal) { return animal.value === previousAnimalId; })) {
+                animalSelector.value = previousAnimalId;
+            }
+
+            if (filteredAnimals.length === 0) {
+                animalSelector.options[0].text = hatoId
+                    ? 'No hay animales para el hato seleccionado'
+                    : 'Seleccione un animal';
+                animalSelector.disabled = true;
+            }
+
+            syncAnimalSelectPlugin();
+        }
+
+        function syncHatoFromAnimal() {
+            var selectedOption = animalSelector.options[animalSelector.selectedIndex];
+            if (!selectedOption || !selectedOption.value) {
+                return;
+            }
+            var selectedHatoId = selectedOption.getAttribute('data-hato-id');
+            if (!selectedHatoId) {
+                return;
+            }
+            hatoSelector.value = selectedHatoId;
+            renderAnimalsForHato(selectedHatoId, true);
+        }
+
+        hatoSelector.addEventListener('change', function () {
+            renderAnimalsForHato(this.value);
+        });
+
+        animalSelector.addEventListener('change', syncHatoFromAnimal);
+
+        if ($animalSelector) {
+            $animalSelector.on('select2:select', syncHatoFromAnimal);
+            $animalSelector.on('select2:clear', function () {
+                animalSelector.value = '';
+            });
+        }
+
+        renderAnimalsForHato(hatoSelector.value, true);
+    });
+</script>
+<%- include('partials/_footer') %>

@@ -1,0 +1,118 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Movimiento Hatos
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <% if (can('movimiento_hatos', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Seleccione un Hato</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuación.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form id="movimientoForm" action="/movimiento_hatos/moverAnimal" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Hato Origen</label>
+                                    <select id="hatoOrigenSelector" name="hatoOrigen" class="form-control" onchange="filterTable()"> 
+                                            <option disabled selected>Selecciona un hato</option>
+                                            <% if (data) { %>
+                                            <% for (var i = 0; i < data.length; i++) { %>                                                                       
+                                                <option value="<%= data[i].idHato %>"><%= data[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>       
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hato Destino</label>
+                                    <select name="hatoDestino" class="form-control" id="hatoDestinoSelector">
+                                        <option disabled selected>Selecciona un hato</option>
+                                        <% if (data) { %>
+                                            <% for (var i = 0; i < data.length; i++) { %>                                                                       
+                                                <option value="<%= data[i].idHato %>"><%= data[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>                                               
+                                    </select>
+                                </div>
+                                <input type="hidden" name="selectedAnimals" id="selectedAnimals" value="" />
+                                <div class="mb-3">
+                                    <button id="moverLink" type="submit" class="btn btn-primary">Mover</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+             <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Animales</h5>
+                            <h6 class="card-subtitle text-muted">Administración de los animales.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%" >
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Código</th>
+                                        <th>Fecha de Nacimiento</th>
+                                        <th>Raza</th>
+                                        <th>Color</th>
+                                        <th>Sexo</th>
+                                        <th>Fecha Activo</th>
+                                        <th>Fecha Inactivo</th>
+                                        <th>Ciclo Vital</th>
+                                        <th>Padre</th>
+                                        <th>Madre</th>
+                                        <th>Hato</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (dataAnimal) { %>
+                                        <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                            <tr>
+                                                <td><input class="form-check-input" type="checkbox" value="<%= dataAnimal[i].idAnimal %>"></td>
+                                                <td><%= dataAnimal[i].codigo %></td>
+                                                <td><%= dataAnimal[i].NewFecNac %></td>
+                                                <td><%= dataAnimal[i].nombreRaza %></td>
+                                                <td><%= dataAnimal[i].nombreColor %></td>
+                                                <td><%= dataAnimal[i].sexo %></td>
+                                                <td><%= dataAnimal[i].NewFecAct %></td>
+                                                <td><%= dataAnimal[i].NewFecIna %></td>
+                                                <td><%= dataAnimal[i].nombreCicloVital %></td>
+                                                <td><%= dataAnimal[i].codigoPadre %></td>
+                                                <td><%= dataAnimal[i].codigoMadre %></td>
+                                                <td><%= dataAnimal[i].nombreHato %></td>                                          
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

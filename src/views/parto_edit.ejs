@@ -1,0 +1,105 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Partos
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/partos/updateParto/<%= data.idParto %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Madre</label>
+                                    <select id="animalMadreSelector" name="idAnimalMadre" class="form-control" required>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <% if (dataAnimal[i].idAnimal === data.idAnimalMadre) { %> selected <% } %>><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Padre</label>
+                                    <select id="animalPadreSelector" name="idAnimalPadre" class="form-control" required>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <% if (dataAnimal[i].idAnimal === data.idAnimalPadre) { %> selected <% } %>><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Cria</label>
+                                    <select id="animalCriaSelector" name="idAnimalCria" class="form-control" required>
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <% if (dataAnimal[i].idAnimal === data.idAnimalCria) { %> selected <% } %>><%= dataAnimal[i].codigo %> - <%= dataAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Parto</label>
+                                    <select name="idEstadoParto" class="form-control" required>
+                                        <% if (dataEstadoParto) { %>
+                                            <% for (var i = 0; i < dataEstadoParto.length; i++) { %>
+                                                <option value="<%= dataEstadoParto[i].idEstadoParto %>" <% if (dataEstadoParto[i].idEstadoParto === data.idEstadoParto) { %> selected <% } %>><%= dataEstadoParto[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="fecha" value="<%= data.ymdFecha %>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Peso</label>
+                                    <input type="number" class="form-control" name="peso" step="0.01" min="0" value="<%= data.peso %>" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!window.jQuery || !window.jQuery.fn || !window.jQuery.fn.select2) {
+            return;
+        }
+
+        var $ = window.jQuery;
+        var $selectors = $('#animalMadreSelector, #animalPadreSelector, #animalCriaSelector');
+
+        $selectors.select2({
+            width: '100%',
+            placeholder: 'Seleccione un animal',
+            allowClear: true,
+            minimumResultsForSearch: 0,
+            dropdownParent: $selectors.first().closest('.card-body')
+        });
+    });
+</script>
+
+<%- include('partials/_footer') %>

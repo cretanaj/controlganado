@@ -1,0 +1,121 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+\fs22
+\b Documento Tecnico de Arquitectura y Seguridad\b0\par
+\par
+\b Proyecto:\b0 Sistema Ganadero (Agresto)\par
+\b Fecha:\b0 2026-04-07\par
+\b Alcance:\b0 Arquitectura de la aplicacion y seguridad implementada en el backend web principal.\par
+\par
+\b 1. Vision General de la Arquitectura\b0\par
+La aplicacion principal esta construida sobre Node.js con Express y motor de vistas EJS, conectada a MySQL mediante \f1 express-myconnection\f0  y \f1 mysql2\f0 .\par
+\par
+Se observa una arquitectura MVC pragmatica con capas funcionales:\par
+- Capa de presentacion: vistas EJS en \f1 src/views\f0  y activos estaticos en \f1 src/public\f0 .\par
+- Capa de ruteo HTTP: modulos de rutas en \f1 src/routes\f0  que definen endpoints por dominio de negocio.\par
+- Capa de controladores: modulos en \f1 src/controllers\f0  que implementan la logica de cada caso de uso.\par
+- Capa de servicios: modulos en \f1 src/services\f0  para logica transversal (ejemplo: permisos).\par
+- Capa de datos: MySQL relacional; acceso mediante consultas SQL parametrizadas con conexion por request.\par
+\par
+\b 2. Componentes Principales\b0\par
+\b 2.1 Aplicacion Express (Bootstrap)\b0\par
+Archivo base: \f1 src/app.js\f0 .\par
+Responsabilidades principales:\par
+- Inicializar servidor HTTP y middlewares globales.\par
+- Configurar EJS y rutas estaticas.\par
+- Inyectar conexion a base de datos por request.\par
+- Registrar rutas publicas y privadas.\par
+- Iniciar servidor con tolerancia basica a puerto ocupado (reintento en puerto +1).\par
+\par
+\b 2.2 Ruteo por Modulos\b0\par
+Cada dominio funcional (animales, actividades, inventarios, usuarios, permisos, etc.) expone su propio router en \f1 src/routes\f0 .\par
+Patron general:\par
+- \f1 GET /recurso\f0  lista datos.\par
+- \f1 POST /addRecurso\f0  crea datos.\par
+- \f1 GET /updateRecurso/:id\f0  y \f1 POST /updateRecurso/:id\f0  actualiza datos.\par
+- \f1 GET /deleteRecurso/:id\f0  elimina datos.\par
+\par
+\b 2.3 Controladores\b0\par
+Los controladores reciben request/response, ejecutan SQL y renderizan vistas o redirigen flujo.\par
+Ejemplo observado en \f1 actividadController\f0 : CRUD completo con consultas parametrizadas y respuesta de vista EJS.\par
+\par
+\b 2.4 Servicio de Permisos\b0\par
+El servicio \f1 src/services/permissionService.js\f0  centraliza:\par
+- Mapeo ruta -> modulo de seguridad.\par
+- Inferencia de accion (ver, crear, editar, eliminar) por metodo HTTP y patron de URL.\par
+- Construccion y validacion de matriz de permisos por perfil.\par
+\par
+\b 2.5 Aplicacion Movil (Expo)\b0\par
+En el mismo repositorio existe \f1 ExpoApp\f0  con Expo Router. Actualmente se comporta como cliente movil en etapa inicial/prototipo y no reemplaza el backend web principal.\par
+\par
+\b 3. Flujo Tecnico de una Peticion\b0\par
+1. Cliente envia request HTTP.\par
+2. Express aplica middlewares globales (logging, headers de seguridad, parser, sesion).\par
+3. Middleware de seguridad adjunta contexto de usuario y funcion de autorizacion a vistas.\par
+4. Si la ruta es privada, se valida autenticacion y permisos por modulo/accion.\par
+5. Router de dominio delega en controlador.\par
+6. Controlador ejecuta SQL en MySQL y responde con render EJS o redireccion.\par
+\par
+\b 4. Seguridad Implementada y Funcionamiento\b0\par
+La seguridad es de tipo \b autenticacion por sesion + autorizacion RBAC\b0  (Role Based Access Control), reforzada con controles de hardening y mitigacion de abuso.\par
+\par
+\b 4.1 Hardening HTTP\b0\par
+Implementacion: middleware \f1 helmet\f0  global en \f1 src/app.js\f0 .\par
+Funcionamiento:\par
+- Agrega cabeceras de proteccion HTTP para reducir superficie de ataque en navegador.\par
+- En la configuracion actual, \f1 contentSecurityPolicy\f0  y \f1 crossOriginEmbedderPolicy\f0  estan desactivadas para compatibilidad.\par
+\par
+\b 4.2 Gestion de Sesion\b0\par
+Implementacion: \f1 express-session\f0 .\par
+Funcionamiento:\par
+- La cookie de sesion usa nombre \f1 agresto.sid\f0 .\par
+- Atributos activos: \f1 httpOnly=true\f0 , \f1 sameSite=lax\f0 , expiracion de 8 horas, \f1 rolling=true\f0 .\par
+- \f1 secure\f0  se habilita automaticamente en produccion (requiere HTTPS).\par
+- En login exitoso se aplica \f1 req.session.regenerate()\f0  para reducir riesgo de session fixation.\par
+- En logout se destruye sesion y se limpia cookie.\par
+\par
+\b 4.3 Autenticacion de Usuario\b0\par
+Implementacion: \f1 src/controllers/authController.js\f0 .\par
+Funcionamiento:\par
+- Usuario envia credenciales a \f1 POST /auth/login\f0 .\par
+- Se consulta usuario por nombre en tabla \f1 usuario\f0  y se valida estado activo.\par
+- Clave se verifica con \f1 bcrypt\f0  cuando esta hasheada.\par
+- Compatibilidad heredada: si la clave estaba en texto plano, se permite una sola verificacion y luego se migra a hash \f1 bcrypt\f0  (upgrade en caliente).\par
+\par
+\b 4.4 Mitigacion de Fuerza Bruta en Login\b0\par
+Implementacion: \f1 express-rate-limit\f0  en \f1 src/routes/auth.js\f0 .\par
+Funcionamiento:\par
+- Limite de 8 intentos por IP cada 15 minutos para \f1 /auth/login\f0 .\par
+- Al exceder limite, responde mensaje de bloqueo temporal.\par
+\par
+\b 4.5 Autorizacion RBAC por Perfil y Modulo\b0\par
+Implementacion: \f1 src/middlewares/authMiddleware.js\f0  + \f1 src/services/permissionService.js\f0 .\par
+Funcionamiento:\par
+- Tras login, se cargan permisos del perfil desde BD (tabla de relacion perfil-modulo-permiso).\par
+- Se construye \f1 permissionMap\f0  con acciones: ver, crear, editar, eliminar.\par
+- Cada request privado calcula modulo y accion requeridos.\par
+- Si no existe sesion valida -> redireccion a login con \f1 next\f0  sanitizado.\par
+- Si existe sesion pero no permiso -> respuesta 403 con vista \f1 forbidden\f0 .\par
+- Si cumple regla -> request continua al controlador.\par
+\par
+\b 4.6 Prevencion de Open Redirect\b0\par
+Implementacion: funcion \f1 sanitizeNext\f0 .\par
+Funcionamiento:\par
+- Solo acepta rutas internas que inician con \f1 /\f0 .\par
+- Bloquea rutas ambiguas (\f1 //\f0 ) y redirecciones a endpoints de auth/login como destino final.\par
+\par
+\b 4.7 SQL Injection (control observado)\b0\par
+Funcionamiento:\par
+- En controladores se usan consultas parametrizadas con placeholders \f1 ?\f0  en \f1 mysql2\f0 .\par
+- Esto reduce riesgo de inyeccion al separar estructura SQL de datos de entrada.\par
+\par
+\b 5. Resumen de la Arquitectura de Seguridad\b0\par
+El modelo de seguridad actual combina tres capas:\par
+1) Perimetro HTTP (Helmet + rate limit).\par
+2) Identidad y sesion (login, sesion segura, regeneracion, logout).\par
+3) Control de acceso por negocio (RBAC modulo/accion por perfil).\par
+\par
+Este enfoque protege la aplicacion en distintos puntos del ciclo de vida de la peticion y alinea los permisos con la estructura funcional del sistema ganadero.\par
+\par
+\b Fin del documento\b0\par
+}

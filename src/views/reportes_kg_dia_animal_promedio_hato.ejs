@@ -1,0 +1,77 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Kg por Día por Animal y Promedio por Hato</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                        <li class="breadcrumb-item active">Reportes</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Reporte de kg por día</h5>
+                            <h6 class="card-subtitle text-muted">Basado en la vista _vw_rpt_04_kg_dia_animal_promedio_hato.</h6>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatables-reponsive" class="table table-striped nowrap" style="width:100%" data-scroll-x="true">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>ID Pesaje</th>
+                                        <th>ID Hato</th>
+                                        <th>Nombre Hato</th>
+                                        <th>ID Animal</th>
+                                        <th>Código Animal</th>
+                                        <th>Nombre Animal</th>
+                                        <th>Fecha</th>
+                                        <th>Peso Kg</th>
+                                        <th>Fecha Anterior</th>
+                                        <th>Peso Anterior Kg</th>
+                                        <th>Días Transcurridos</th>
+                                        <th>Ganancia Kg</th>
+                                        <th>Kg por Día</th>
+                                        <th>Promedio Animal</th>
+                                        <th>Promedio Hato</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].idPesaje %></td>
+                                                <td><%= data[i].idHato %></td>
+                                                <td><%= data[i].nombreHato %></td>
+                                                <td><%= data[i].idAnimal %></td>
+                                                <td><%= data[i].codigoAnimal %></td>
+                                                <td><%= data[i].nombreAnimal %></td>
+                                                <td><%= data[i].fecha %></td>
+                                                <td><%= data[i].pesoKg %></td>
+                                                <td><%= data[i].fechaAnterior %></td>
+                                                <td><%= data[i].pesoAnteriorKg %></td>
+                                                <td><%= data[i].diasTranscurridos %></td>
+                                                <td><%= data[i].gananciaKgPeriodo %></td>
+                                                <td><%= data[i].kgPorDiaAnimal %></td>
+                                                <td><%= data[i].promedioKgPorDiaAnimal %></td>
+                                                <td><%= data[i].promedioKgPorDiaHato %></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/_footer') %>

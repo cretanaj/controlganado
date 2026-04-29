@@ -1,0 +1,148 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Productos
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Productos</h5>
+                            <h6 class="card-subtitle text-muted">Administracion del catalogo de productos.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageProductos = can('productos', 'editar') || can('productos', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Fecha Compra</th>
+                                        <th>Fecha Fabricacion</th>
+                                        <th>Fecha Caducidad</th>
+                                        <th>Cantidad</th>
+                                        <th>Lote</th>
+                                        <th>Proveedor</th>
+                                        <th>Numero Factura</th>
+                                        <% if (canManageProductos) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <td><%= data[i].fechaCompraFormateada %></td>
+                                                <td><%= data[i].fechaFabricacionFormateada %></td>
+                                                <td><%= data[i].fechaCaducidadFormateada %></td>
+                                                <td><%= data[i].cantidad %></td>
+                                                <td><%= data[i].lote %></td>
+                                                <td><%= data[i].nombreProveedor || '' %></td>
+                                                <td><%= data[i].numeroFactura %></td>
+                                                <% if (canManageProductos) { %>
+                                                <td class="table-action">
+                                                    <% if (can('productos', 'editar')) { %>
+                                                    <a href="/productos/updateProducto/<%= data[i].idProducto %>"><i class="align-middle fas fa-fw fa-pen"></i></a>
+                                                    <% } %>
+                                                    <% if (can('productos', 'eliminar')) { %>
+                                                    <a href="/productos/deleteProducto/<%= data[i].idProducto %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('productos', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/productos/addProducto" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" placeholder="Codigo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" rows="3" maxlength="500" placeholder="Descripcion"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Compra</label>
+                                    <input type="date" class="form-control" name="fechaCompra">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Fabricacion</label>
+                                    <input type="date" class="form-control" name="fechaFabricacion">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Caducidad</label>
+                                    <input type="date" class="form-control" name="fechaCaducidad">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cantidad</label>
+                                    <input type="number" step="0.01" class="form-control" name="cantidad" placeholder="Cantidad">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Lote</label>
+                                    <input type="text" class="form-control" name="lote" placeholder="Lote">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Proveedor</label>
+                                    <select name="idProveedor" class="form-control" id="idProveedor">
+                                        <option value="">-- Seleccionar proveedor --</option>
+                                        <% if (dataProveedores) { %>
+                                            <% for (var i = 0; i < dataProveedores.length; i++) { %>
+                                                <option value="<%= dataProveedores[i].idProveedor %>"><%= dataProveedores[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Numero Factura</label>
+                                    <input type="text" class="form-control" name="numeroFactura" placeholder="Numero Factura">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

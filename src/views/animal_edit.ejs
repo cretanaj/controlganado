@@ -1,0 +1,164 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Animales
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuación.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/animales/updateAnimal/<%= data.idAnimal %>" method="post">
+
+                                <div class="mb-3">
+                                    <label class="form-label">Código</label>
+                                    <input type="text" class="form-control" name="codigo" value="<%= data.codigo %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Código Alterno</label>
+                                    <input type="text" class="form-control" name="codigoAlterno" value="<%= data.codigoAlterno %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" name="fechaNacimiento" value="<%= data.ymdFecNac %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" value="<%= data.nombre %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Raza</label>
+                                    <select name="idRaza" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataRaza) { %>
+                                            <% for (var i = 0; i < dataRaza.length; i++) { %>
+                                                <option value="<%= dataRaza[i].idraza %>" <% if (dataRaza[i].idraza === data.idRaza ) { %> selected <% } %>><%= dataRaza[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Color</label>
+                                    <select name="idColor" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataColor) { %>
+                                            <% for (var i = 0; i < dataColor.length; i++) { %>
+                                                <option value="<%= dataColor[i].idcolor %>" <% if (dataColor[i].idcolor === data.idColor ) { %> selected <% } %>><%= dataColor[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Sexo</label>
+                                    <input type="text" class="form-control" name="sexo" value="<%= data.sexo %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" value="<%= data.descripcion %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Animal</label>
+                                    <select name="idEstadoAnimal" class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">-- Seleccionar estado --</option>
+                                        <% if (dataEstadoAnimal) { %>
+                                            <% for (var i = 0; i < dataEstadoAnimal.length; i++) { %>
+                                                <option value="<%= dataEstadoAnimal[i].idEstadoAnimal %>" <% if (data.idEstadoAnimal && parseInt(dataEstadoAnimal[i].idEstadoAnimal) === parseInt(data.idEstadoAnimal) ) { %> selected <% } %>><%= dataEstadoAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Activo</label>
+                                    <input type="date" class="form-control" name="fechaActivo" value="<%= data.ymdFecAct %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inactivo</label>
+                                    <input type="date" class="form-control" name="fechaInactivo" value="<%= data.ymdFecIna %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ciclo Vital</label>
+                                    <select name="idCicloVital" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataCiclovital) { %>
+                                            <% for (var i = 0; i < dataCiclovital.length; i++) { %>
+                                                <option value="<%= dataCiclovital[i].idCicloVital %>" <% if (dataCiclovital[i].idCicloVital === data.idCicloVital ) { %> selected <% } %>><%= dataCiclovital[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Padre</label>
+                                    <select name="idAnimalPadre" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <% if (dataAnimal[i].idAnimal === data.idAnimalPadre ) { %> selected <% } %>><%= dataAnimal[i].codigo %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Madre</label>
+                                    <select name="idAnimalMadre" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataAnimal) { %>
+                                            <% for (var i = 0; i < dataAnimal.length; i++) { %>
+                                                <option value="<%= dataAnimal[i].idAnimal %>" <% if (dataAnimal[i].idAnimal === data.idAnimalMadre ) { %> selected <% } %>><%= dataAnimal[i].codigo %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hato</label>
+                                    <select name="idHato" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataHato) { %>
+                                            <% for (var i = 0; i < dataHato.length; i++) { %>
+                                                <option value="<%= dataHato[i].idHato %>" <% if (dataHato[i].idHato === data.idHato ) { %> selected <% } %>><%= dataHato[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca" class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataFinca) { %>
+                                            <% for (var i = 0; i < dataFinca.length; i++) { %>
+                                                <option value="<%= dataFinca[i].idFinca %>" <% if (dataFinca[i].idFinca === data.idFinca ) { %> selected <% } %>><%= dataFinca[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Arete</label>
+                                    <select name="idArete" class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">Sin arete</option>
+                                        <% if (dataArete) { %>
+                                            <% for (var i = 0; i < dataArete.length; i++) { %>
+                                                <option value="<%= dataArete[i].idArete %>" <% if (dataArete[i].idArete === data.idArete ) { %> selected <% } %>><%= dataArete[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<%- include('partials/_footer') %>

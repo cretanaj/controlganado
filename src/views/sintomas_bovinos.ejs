@@ -1,0 +1,115 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">Sintomas Bovinos</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Relacion Animal - Enfermedad - Paquete</h5>
+                            <h6 class="card-subtitle text-muted">Administracion de sintomas bovinos.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageSintomasBovinos = can('sintomas_bovinos', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Animal</th>
+                                        <th>Enfermedad</th>
+                                        <th>Paquete</th>
+                                        <% if (canManageSintomasBovinos) { %>
+                                        <th>Acciones</th>
+                                        <% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <td><%= i + 1 %></td>
+                                                <td><%= data[i].codigoAnimal %> - <%= data[i].nombreAnimal %></td>
+                                                <td><%= data[i].codigoEnfermedad %> - <%= data[i].nombreEnfermedad %></td>
+                                                <td><%= data[i].codigoPaquete %> - <%= data[i].nombrePaquete %></td>
+                                                <% if (canManageSintomasBovinos) { %>
+                                                <td class="table-action">
+                                                    <% if (can('sintomas_bovinos', 'eliminar')) { %>
+                                                    <a href="/sintomas_bovinos/deleteSintomaBovino/<%= data[i].idAnimal %>/<%= data[i].idEnfermedad %>/<%= data[i].idPaquete %>"><i class="align-middle fas fa-fw fa-trash"></i></a>
+                                                    <% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (can('sintomas_bovinos', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar una relacion</h5>
+                            <h6 class="card-subtitle text-muted">Seleccione animal, enfermedad y paquete.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/sintomas_bovinos/addSintomaBovino" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Animal</label>
+                                    <select name="idAnimal" class="form-control" required>
+                                        <option value="">-- Seleccionar animal --</option>
+                                        <% if (dataAnimales) { %>
+                                            <% for (var i = 0; i < dataAnimales.length; i++) { %>
+                                                <option value="<%= dataAnimales[i].idAnimal %>"><%= dataAnimales[i].codigo %> - <%= dataAnimales[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Enfermedad</label>
+                                    <select name="idEnfermedad" class="form-control" required>
+                                        <option value="">-- Seleccionar enfermedad --</option>
+                                        <% if (dataEnfermedades) { %>
+                                            <% for (var i = 0; i < dataEnfermedades.length; i++) { %>
+                                                <option value="<%= dataEnfermedades[i].idEnfermedad %>"><%= dataEnfermedades[i].codigo %> - <%= dataEnfermedades[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Paquete</label>
+                                    <select name="idPaquete" class="form-control" required>
+                                        <option value="">-- Seleccionar paquete --</option>
+                                        <% if (dataPaquetes) { %>
+                                            <% for (var i = 0; i < dataPaquetes.length; i++) { %>
+                                                <option value="<%= dataPaquetes[i].idPaquete %>"><%= dataPaquetes[i].codigo %> - <%= dataPaquetes[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+<%- include('partials/_footer') %>

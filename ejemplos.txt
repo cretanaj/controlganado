@@ -1,0 +1,82 @@
+const fs = require('fs');
+const mysql = require('mysql');
+const fastcsv = require('fast-csv');
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'tu_usuario',
+  password: 'tu_contraseña',
+  database: 'tu_base_de_datos'
+});
+
+connection.connect();
+
+const stream = fs.createReadStream('frutas.csv');
+const csvStream = fastcsv
+  .parse({ headers: true })
+  .on('data', (row) => {
+    const { nombre, descripcion, diasCosecha } = row;
+    const query = 'CALL insertarFruta(?, ?, ?)';
+    connection.query(query, [nombre, descripcion, parseInt(diasCosecha)], (err) => {
+      if (err) console.error('Error al insertar:', err);
+    });
+  })
+  .on('end', () => {
+    console.log('Todos los datos fueron insertados.');
+    connection.end();
+  });
+
+stream.pipe(csvStream);
+
+
+
+
+
+
+
+
+**********************************
+
+
+    .on('end',function(){
+        csvDataColl.shift()
+
+        pool.getConnection((error,connection) => {
+            if(error){
+                console.log(error)
+            }
+            else{
+        
+                let query = "CALL _SP_insert_animal ?"
+                /*let query = "INSERT INTO animal (codigo,codigoAlterno,nombre) VALUES ?"*/
+                connection.query(query,[csvDataColl],(error,res) => {
+                    console.log(query,[csvDataColl])
+                })
+               /*console.log(query,[csvDataColl[0]])*/
+            }
+        })
+
+        fs.unlinkSync(path)
+    })
+
+
+
+
+
+
+
+
+
+
+
+    ************ almost
+
+    
+    .on('data', (csvDataColl) => {        
+        pool.getConnection((error,connection) => {      
+            let query = "CALL _SP_insert_animal (?,?,?)"
+            connection.query(query,[csvDataColl],(error,res) => {
+                console.log(query,[csvDataColl])
+            })
+        })  
+    })   

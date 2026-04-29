@@ -1,0 +1,5 @@
+﻿codigo,codigoAlterno,fechaNacimiento,nombre,raza,color,sexo,descripcion,estado,fechaActivo,fechaInactivo,cicloVital,padre,madre,hato,finca
+RA_codsss,codAl1,05-07-2023,nombre,Braford,Rojo,Macho,desc,estado,2023-01-01,2023-01-01,Toro,A1,A1,H1,F1
+RA_cesar3,cesar3,2022-07-05,cesar3,Brahman,Rojo,Macho,desc,estado,2023-01-01,2023-01-01,Toro,A1,A1,H1,F1
+RA_warren,warren,02-12-2021,warren,Holando,Rojo,Macho,desc,estado,2023-01-01,2023-01-01,Toro,A1,A1,H1,F1
+RA_test1,cesar2,2025-05-05,cesar2,Jersey,Rojo,Macho,desc,estado,2023-01-01,2023-01-01,Toro,A1,A1,H1,F1

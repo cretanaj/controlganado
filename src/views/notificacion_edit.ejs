@@ -1,0 +1,77 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Notificaciones
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Actualizar un registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuacion.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/notificaciones/updateNotificacion/<%= data.idNotificacion %>" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" placeholder="Codigo" value="<%= data.codigo %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<%= data.nombre %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo Notificacion</label>
+                                    <select name="idTipoNotificacion" class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">-- Seleccionar tipo --</option>
+                                        <% if (dataTipoNotificacion) { %>
+                                            <% for (var i = 0; i < dataTipoNotificacion.length; i++) { %>
+                                                <option value="<%= dataTipoNotificacion[i].idTipoNotificacion %>" <% if (parseInt(dataTipoNotificacion[i].idTipoNotificacion) === parseInt(data.idTipoNotificacion)) { %> selected <% } %>><%= dataTipoNotificacion[i].codigo %> - <%= dataTipoNotificacion[i].notificacionClass %></option>
+                                            <% } %>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Condicion Dias</label>
+                                    <input type="number" class="form-control" name="condicionDias" placeholder="Condicion Dias" value="<%= data.condicionDias %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inicio Dias</label>
+                                    <input type="number" class="form-control" name="fechaInicioDias" placeholder="Fecha Inicio Dias" value="<%= data.fechaInicioDias %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Final Dias</label>
+                                    <input type="number" class="form-control" name="fechaFinalDias" placeholder="Fecha Final Dias" value="<%= data.fechaFinalDias %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Criterio</label>
+                                    <input type="text" class="form-control" name="criterio" placeholder="Criterio" value="<%= data.criterio %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Instrucciones</label>
+                                    <textarea class="form-control" name="instrucciones" rows="3" placeholder="Instrucciones"><%= data.instrucciones %></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<%- include('partials/_footer') %>

@@ -1,0 +1,289 @@
+<%- include('partials/_header') %>
+<%- include('partials/_menu') %>
+
+<div class="main">
+    <%- include('partials/_menuheader') %>
+    <main class="content">    
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title">
+                    Animales
+                </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Animales</h5>
+                            <h6 class="card-subtitle text-muted">Administración de los animales.</h6>
+                        </div>
+                        <div class="card-body">
+                            <% const canManageAnimales = can('animales', 'editar') || can('animales', 'eliminar'); %>
+                            <table id="datatables-reponsive" class="table table-striped nowrap" style="width:100%" data-scroll-x="true">
+                                <thead>
+                                    <tr>
+                                        <% if (canManageAnimales) { %><th>Acciones</th><% } %>
+                                        <th>N°</th>
+                                        <th>Código</th>
+                                        <th>Código Alterno</th>
+                                        <th>Fecha de Nacimiento</th>
+                                        <th>Nombre</th>
+                                        <th>Raza</th>
+                                        <th>Color</th>
+                                        <th>Sexo</th>
+                                        <th>Descripción</th>
+                                        <th>Estado Animal</th>
+                                        <th>Fecha Activo</th>
+                                        <th>Fecha Inactivo</th>
+                                        <th>Ciclo Vital</th>
+                                        <th>Padre</th>
+                                        <th>Madre</th>
+                                        <th>Hato</th>
+                                        <th>Finca</th>
+                                        <th>Arete</th><!--tal vez no sea necesario-->
+                                        <% if (canManageAnimales) { %><th>Acciones</th><% } %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (data) { %>
+                                        <% for (var i = 0; i < data.length; i++) { %>
+                                            <tr>
+                                                <% if (canManageAnimales) { %>
+                                                <td class="table-action">
+                                                    <% if (can('animales', 'editar')) { %><a href="/animales/updateAnimal/<%= data[i].idAnimal %>"><i class="align-middle fas fa-fw fa-pen"></i></a><% } %>
+                                                    <% if (can('animales', 'eliminar')) { %><a href="/animales/deleteAnimal/<%= data[i].idAnimal %>"><i class="align-middle fas fa-fw fa-trash"></i></a><% } %>
+                                                </td>
+                                                <% } %>
+                                                <td><%= (i + 1) %></td>
+                                                <td><%= data[i].codigo %></td>
+                                                <td><%= data[i].codigoAlterno %></td>
+                                                <td><%= data[i].NewFecNac %></td>
+                                                <td><%= data[i].nombre %></td>
+                                                <td><%= data[i].nombreRaza %></td>
+                                                <td><%= data[i].nombreColor %></td>
+                                                <td><%= data[i].sexo %></td>
+                                                <td><%= data[i].descripcion %></td>
+                                                <td><%= data[i].nombreEstadoAnimal %></td>
+                                                <td><%= data[i].NewFecAct %></td>
+                                                <td><%= data[i].NewFecIna %></td>
+                                                <td><%= data[i].nombreCicloVital %></td>
+                                                <td><%= data[i].codigoPadre %></td>
+                                                <td><%= data[i].codigoMadre %></td>
+                                                <td><%= data[i].nombreHato %></td>
+                                                <td><%= data[i].nombreFinca %></td>
+                                                <td><%= data[i].nombreArete %></td>
+                                                <% if (canManageAnimales) { %>
+                                                <td class="table-action">
+                                                    <% if (can('animales', 'editar')) { %><a href="/animales/updateAnimal/<%= data[i].idAnimal %>"><i class="align-middle fas fa-fw fa-pen"></i></a><% } %>
+                                                    <% if (can('animales', 'eliminar')) { %><a href="/animales/deleteAnimal/<%= data[i].idAnimal %>"><i class="align-middle fas fa-fw fa-trash"></i></a><% } %>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <% if (can('animales', 'crear')) { %>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar un nuevo registro</h5>
+                            <h6 class="card-subtitle text-muted">Ingrese la informacion solicitada a continuación.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form  action="/animales/addAnimal" method="post">
+                               
+                                <div class="mb-3">
+                                    <label class="form-label">Código</label>
+                                    <input type="text" class="form-control" name="codigo"  placeholder="Código">
+                                </div>
+                                 <div class="mb-3">
+                                    <label class="form-label">Código Alterno</label>
+                                    <input type="text" class="form-control" name="codigoAlterno"  placeholder="Código Alterno">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" name="fechaNacimiento"  placeholder="Fecha de Nacimiento">
+                                </div>                                
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre"  placeholder="Nombre" >
+                                </div>	
+                                <div class="mb-3">
+                                    <label class="form-label">Raza</label>
+                                    <select name="idRaza"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataRaza) { %>
+                                            <% for (var i = 0; i < dataRaza.length; i++) { %>                                                                       
+                                                <option value="<%= dataRaza[i].idraza %>"><%= dataRaza[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>    
+                                    </select>                                   
+                                </div>	
+                                <div class="mb-3">
+                                    <label class="form-label">Color</label>
+                                    <select name="idColor"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataColor) { %>
+                                            <% for (var i = 0; i < dataColor.length; i++) { %>                                                                       
+                                                <option value="<%= dataColor[i].idcolor %>"><%= dataColor[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>    
+                                    </select>                                   
+                                </div>	
+                                <div class="mb-3">
+                                    <label class="form-label">Sexo</label>
+                                    <input type="text" class="form-control" name="sexo"  placeholder="Sexo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion"  placeholder="Descripción">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Estado Animal</label>
+                                    <select name="idEstadoAnimal"  class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">-- Seleccionar estado --</option>
+                                        <% if (dataEstadoAnimal) { %>
+                                            <% for (var i = 0; i < dataEstadoAnimal.length; i++) { %>                                                                       
+                                                <option value="<%= dataEstadoAnimal[i].idEstadoAnimal %>"><%= dataEstadoAnimal[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>     
+                                    </select>                                   
+                                </div>                               
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Activo</label>
+                                    <input type="date" class="form-control" name="fechaActivo"  placeholder="Fecha Activo">
+                                </div> 
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha Inactivo</label>
+                                    <input type="date" class="form-control" name="fechaInactivo"  placeholder="Fecha Inactivo">
+                                </div> 
+                                <div class="mb-3">
+                                    <label class="form-label">Ciclo Vital</label>
+                                    <select name="idCicloVital"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataCiclovital) { %>
+                                            <% for (var i = 0; i < dataCiclovital.length; i++) { %>                                                                       
+                                                <option value="<%= dataCiclovital[i].idCicloVital %>"><%= dataCiclovital[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>   
+                                    </select>                                   
+                                </div>	
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Padre</label>
+                                    <select name="idAnimalPadre"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (data) { %>
+                                            <% for (var i = 0; i < data.length; i++) { %>                                                                       
+                                                <option value="<%= data[i].idAnimal %>"><%= data[i].codigo %></option>
+                                            <% } %>
+                                        <% } %>       
+                                    </select>                                   
+                                </div>	
+                                <div class="mb-3">
+                                    <label class="form-label">Animal Madre</label>
+                                    <select name="idAnimalMadre"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (data) { %>
+                                            <% for (var i = 0; i < data.length; i++) { %>                                                                       
+                                                <option value="<%= data[i].idAnimal %>"><%= data[i].codigo %></option>
+                                            <% } %>
+                                        <% } %>        
+                                    </select>                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hato</label>
+                                    <select name="idHato"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataHato) { %>
+                                            <% for (var i = 0; i < dataHato.length; i++) { %>                                                                       
+                                                <option value="<%= dataHato[i].idHato %>"><%= dataHato[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>       
+                                    </select>                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Finca</label>
+                                    <select name="idFinca"  class="form-control" id="exampleFormControlSelect1">
+                                        <% if (dataFinca) { %>
+                                            <% for (var i = 0; i < dataFinca.length; i++) { %>                                                                       
+                                                <option value="<%= dataFinca[i].idFinca %>"><%= dataFinca[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>     
+                                    </select>                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Arete</label>
+                                    <select name="idArete"  class="form-control" id="exampleFormControlSelect1">
+                                        <option value="">Sin arete</option>
+                                        <% if (dataArete) { %>
+                                            <% for (var i = 0; i < dataArete.length; i++) { %>                                                                       
+                                                <option value="<%= dataArete[i].idArete %>"><%= dataArete[i].nombre %></option>
+                                            <% } %>
+                                        <% } %>     
+                                    </select>                                   
+                                </div>
+                                									
+                                <!--<div class="mb-3">
+                                    <label class="form-label w-100">Cargar archivo</label>
+                                    <input type="file">
+                                    <small class="form-text d-block text-muted">Formato de archivo CSV únicamente.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Check me out</span>
+                                    </label>
+                                </div>-->
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Carga Masiva</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="/animales/importAnimal" method="post" enctype="multipart/form-data">
+                               
+                                
+                                
+
+                                <div class="mb-3">
+                                   <label for="formFile" class="form-label">Cargar Archivo CSV</label>                                   
+                                </div>
+                                <div class="mb-3">
+                                   <input class="form-control" type="file" id="formFile"  name="file" accept=".csv" required>                                  
+                                </div>
+                                <div class="mb-3">
+                                     <button type="submit" class="btn btn-primary">Importar</button>                                
+                                </div>
+                            </form>                                 
+                            <form action="/animales" method="post">
+                                <button type="submit" class="btn btn-primary">Exportar CSV</button>
+                            </form> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="row">
+               
+            </div>
+
+        </div>
+    </main>
+
+
+<%- include('partials/_footer') %>
